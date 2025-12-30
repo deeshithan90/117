@@ -206,15 +206,13 @@ body {
     position: absolute;
     width: 50px;
     height: 50px;
-    background: rgba(0, 0, 0, 0.7);
-    border: 2px solid red;
+    background: darkgoldenrod ;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 25px;
     font-weight: bold;
     color: white;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.5);
 }
 
 /* CUBE FACES */
@@ -233,8 +231,8 @@ body {
 /* ===== BIG IMAGE SLIDER LEFT → RIGHT ===== */
 .image-slider {
     position: relative;
-    width: 800px;
-    height: 400px;
+    width: 600px;
+    height: 300px;      
     overflow: hidden;
     margin-top: 40px;
 }
@@ -258,22 +256,39 @@ body {
     left: 100%;
     opacity: 0;
 }
-
-.main-s{
+/* OUR FACILITIES UPDATED */
+.main-s {
     display: flex;
-    align-items: center;
-    justify-content: space-around;
+    justify-content: space-around;  /* Center horizontally */               /* Space between circles */      /* Wrap on smaller screens */
     padding: 15px;
+    align-items: center;
 }
 
-.s{
+.s {
     background-color: black;
-    padding: 25px;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;       /* Make it circular */
     color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
     font-weight: bold;
-    border-radius: 25px;
-    width: 200px;
+    padding: 5px;
 }
+
+.s i {
+    font-size: 30px;          /* Icon size */
+    margin-bottom: 5px;
+}
+
+.s h4 {
+    font-size: 15px;          /* Smaller text inside circle */
+    margin: 0;
+}
+
 </style>
 </head>
 
@@ -287,7 +302,7 @@ body {
                width="110"
                height="120"
                class="logo">
-        <h1 style="outline: red solid 2px; padding: 10px;">117 Security Force</h1>
+        <h1>117 Security Force</h1>
     </div>
 
     <div class="button-links">
@@ -392,30 +407,23 @@ body {
 <br>
 <div class="main-s">
     <div class="s">
-         <i class="fa-solid fa-building-shield" style="font-size: 40px;"></i>
-        <br>
-        <br>
-        <h4>Best security services</h4>
+        <i class="fa-solid fa-building-shield"></i>
+        <h4>Best Security</h4>
     </div>
     <div class="s">
-         <i style="font-size: 40px;" class="fa-solid fa-indian-rupee-sign"></i>
-        <br>
-        <br>
-        <h3>Low cost</h3>
+        <i class="fa-solid fa-indian-rupee-sign"></i>
+        <h4>Low Cost</h4>
     </div>
     <div class="s">
-        <i class="fa-solid fa-circle-check" style="font-size: 40px;"></i>
-        <br>
-        <br>
-        <h3>Best perfomence</h3>
+        <i class="fa-solid fa-circle-check"></i>
+        <h4>Best Performance</h4>
     </div>
     <div class="s">
-        <i class="fa-solid fa-clock" style="font-size: 40px;"></i>
-        <br>
-        <br>
-        <h3>Fast working</h3>
+        <i class="fa-solid fa-clock"></i>
+        <h4>Fast Working</h4>
     </div>
 </div>
+
 <br>
 <br>
 <!-- TEAM SECTION -->
