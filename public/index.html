@@ -9,10 +9,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
 <!-- Font Awesome -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
@@ -31,6 +29,7 @@ body {
     color: white;
     display: flex;
     flex-direction: column;
+    padding-top: 160px; /* Fix for fixed navbar */
 }
 
 .l{
@@ -62,6 +61,9 @@ body {
     background: rgba(0, 0, 0, 0.7);
     color: white;
     position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
 }
 
 /* LOGO AREA */
@@ -124,7 +126,7 @@ body {
     position: absolute;
     top: 45px;
     left: 0;
-    width: 100px;
+    width: 120px;
     background: white;
     border-radius: 10px;
     box-shadow: 0 10px 20px rgba(0,0,0,0.4);
@@ -215,6 +217,7 @@ body {
     box-shadow: 0 5px 20px rgba(0,0,0,0.5);
 }
 
+/* CUBE FACES */
 .front  { transform: rotateY(0deg) translateZ(50px); }
 .back   { transform: rotateY(180deg) translateZ(50px); }
 .right  { transform: rotateY(90deg) translateZ(50px); }
@@ -225,6 +228,51 @@ body {
 @keyframes spinCube {
     0%   { transform: rotateX(0deg) rotateY(0deg); }
     100% { transform: rotateX(360deg) rotateY(360deg); }
+}
+
+/* ===== BIG IMAGE SLIDER LEFT → RIGHT ===== */
+.image-slider {
+    position: relative;
+    width: 800px;
+    height: 400px;
+    overflow: hidden;
+    margin-top: 40px;
+}
+
+.image-slider .slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    left: -100%;
+    opacity: 0;
+    transition: left 0.8s ease, opacity 0.8s ease;
+}
+
+.image-slider .slide.active {
+    left: 0;
+    opacity: 1;
+}
+
+.image-slider .slide.exit {
+    left: 100%;
+    opacity: 0;
+}
+
+.main-s{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 15px;
+}
+
+.s{
+    background-color: black;
+    padding: 25px;
+    color: white;
+    font-weight: bold;
+    border-radius: 25px;
+    width: 200px;
 }
 </style>
 </head>
@@ -278,12 +326,8 @@ body {
         </form>
     </div>
 </div>
-<br>
-<br>
-<br>
-<br>
-<br>
-<!-- CUBE -->
+
+<!-- HERO + CUBE -->
 <div class="cube-container">
   <div class="cube">
     <div class="face front">117</div>
@@ -294,8 +338,7 @@ body {
     <div class="face bottom">117</div>
   </div>
 </div>
-<br>
-<br>
+
 <div class="hero">
     <div>
         <img src="./images/Security man.jpg" alt="Security Man">
@@ -313,9 +356,70 @@ body {
         </div>
     </div>
 </div>
+
+<!-- BIG IMAGE SLIDER -->
+<center>
+<div class="image-slider">
+    <img src="./images/oa1.jpg" class="slide active">
+    <img src="./images/oa2.jpg" class="slide">
+    <img src="./images/1 (1).jpeg" class="slide">
+    <img src="./images/1 (2).jpeg" class="slide">
+    <img src="./images/1 (3).jpeg" class="slide">
+    <img src="./images/1 (4).jpeg" class="slide">
+    <img src="./images/1(5).jpeg" class="slide">
+</div>
+</center>
+
 <br>
 <br>
-<div style="display: flex; align-items: center; column-gap: 40px;">
+<h1>About my Team</h1>
+<br>
+<div style="display: flex; align-items: center; justify-content: space-around;">
+    <div>
+        <p style="width: 550px;">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit animi repellendus dolores eum accusantium, fugit sint esse incidunt eveniet eaque fuga distinctio adipisci. Nihil, necessitatibus ipsum dolore atque voluptatum quaerat consectetur deleniti odit ex blanditiis modi molestiae id esse optio assumenda corrupti reiciendis quibusdam cumque aperiam? Explicabo placeat animi adipisci maiores neque nostrum saepe iure harum inventore veniam veritatis temporibus sint vero, aliquam ipsam dicta? Fugit nisi nemo unde esse omnis similique culpa nostrum provident non reiciendis. Dolor, nemo libero maiores animi magnam commodi similique quia odit! Eligendi quibusdam aperiam provident, error deserunt impedit ullam blanditiis iste at optio incidunt consequatur repellat cupiditate quasi quisquam quis fuga illo quidem rem ea necessitatibus nulla eveniet id magni. Voluptate laboriosam iure possimus placeat rem? Debitis deleniti sequi adipisci odit magnam non? Voluptate a illo iste blanditiis itaque, in dolore eveniet ex perferendis dicta voluptas aliquam id maxime soluta sapiente magnam aliquid error obcaecati inventore possimus sed, quibusdam necessitatibus eum animi! Quae esse fugit earum, maiores molestias facilis quasi nihil id qui assumenda eum ab veritatis officiis quaerat ad quo beatae eveniet! Sed tenetur nostrum ab rem ducimus suscipit laudantium distinctio accusamus quas, deleniti minus nulla obcaecati corporis velit optio ratione. Et, harum.
+         </p>
+         <br>
+         <button class="btn">Read More</button>
+    </div>
+    <div>
+        <img src="./images/securityMan5.jpg" width="400px">
+    </div>
+</div>
+<bR>
+<br>
+<h1>Our Facilities</h1>
+<br>
+<div class="main-s">
+    <div class="s">
+         <i class="fa-solid fa-building-shield" style="font-size: 40px;"></i>
+        <br>
+        <br>
+        <h4>Best security services</h4>
+    </div>
+    <div class="s">
+         <i style="font-size: 40px;" class="fa-solid fa-indian-rupee-sign"></i>
+        <br>
+        <br>
+        <h3>Low cost</h3>
+    </div>
+    <div class="s">
+        <i class="fa-solid fa-circle-check" style="font-size: 40px;"></i>
+        <br>
+        <br>
+        <h3>Best perfomence</h3>
+    </div>
+    <div class="s">
+        <i class="fa-solid fa-clock" style="font-size: 40px;"></i>
+        <br>
+        <br>
+        <h3>Fast working</h3>
+    </div>
+</div>
+<br>
+<br>
+<!-- TEAM SECTION -->
+<div style="display: flex; align-items: center; column-gap: 40px; margin-top: 50px;">
 <div style="display: flex; align-items: center; column-gap: 80px;">
     <img style="border: black 2px solid;" src="./images/IMG-20251228-WA0003.jpg" width="150px" height="150px">
     <p style="width: 300px;">Mr.Dhanabal (Ex. Police Officer) Director of 117 Security force . During his service period he attend assam war. his paramiliatary training gave inspiration to launch117 security force.  </p>
@@ -328,21 +432,14 @@ body {
     <p style="width: 300px;">Mr.Murugan Manging Director of 117 security force, And he worked in vigilance department. He plays vital role in security agencies and worked as a advisor in many security agency. </p>
 </div>
 </div>
-<br>
-<br>
-<br>
-<footer style="background-color: rgba(0,0,0,0.8); padding: 20px; color: #fff;">
-  <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap;">
 
-    <!-- Logo & Name -->
+<!-- FOOTER -->
+<footer style="background-color: rgba(0,0,0,0.8); padding: 20px; color: #fff; margin-top: 50px;">
+  <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap;">
     <div style="display: flex; align-items: center; gap: 10px;">
       <h3 style="margin: 0; font-size: 16px;">117 Security Force</h3>
     </div>
-
-    <!-- Website -->
     <p style="margin: 0; font-size: 13px;">www.117securityforce.com</p>
-
-    <!-- Social Media -->
     <div>
       <span style="font-size: 13px;">Follow:</span>
       <i class="fa-brands fa-whatsapp" style="margin-left: 8px;"></i>
@@ -350,8 +447,6 @@ body {
       <i class="fa-brands fa-instagram" style="margin-left: 8px;"></i>
     </div>
   </div>
-
-  <!-- Bottom Line -->
   <div style="margin-top: 8px; font-size: 12px; text-align: center; color: darkgoldenrod;">
     © 2025 All rights reserved | Deeshi Soft Technology Services
   </div>
@@ -389,6 +484,24 @@ function aiSpeak(text) {
     utterance.volume = 1;
     speechSynthesis.speak(utterance);
 }
+
+// BIG IMAGE SLIDER LEFT → RIGHT
+(function () {
+    const slides = document.querySelectorAll(".image-slider .slide");
+    if (!slides.length) return;
+
+    let current = 0;
+
+    setInterval(() => {
+        slides[current].classList.remove("active");
+        slides[current].classList.add("exit");
+
+        current = (current + 1) % slides.length;
+
+        slides[current].classList.remove("exit");
+        slides[current].classList.add("active");
+    }, 2000); // 2 seconds
+})();
 </script>
 
 </body>
