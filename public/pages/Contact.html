@@ -208,13 +208,56 @@ body {
     box-shadow: 0 5px 20px rgba(0,0,0,0.5);
 }
 
-.u h1{
-    color: rgba(0, 0, 0, 0.7);
+
+
+.iy:hover{
+   background-color: black;
+   color: white;
 }
-.u p{
-    color: white;
+.Side-bar {
+    background-color: white;
+    position: fixed;
+    padding: 25px;
+    right: -580px;
+    top: 100px;
+    width: 500px;
+    transition: right 0.5s ease;
+    z-index: 2;
+    border-radius: 25px;
 }
 
+
+.inp{
+    background-color: white;
+    padding: 15px;
+    width: 200px;
+    outline: none;
+    border: black 2px solid;
+    border-radius: 25px;
+    z-index: 2;
+}
+
+.op {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease;
+    z-index: 1;
+}
+
+.message{
+    width: 300px;
+    height: 80px;
+    padding: 15px;
+    background-color: white;
+    border: black 2px solid;
+    outline: none;
+}
 .front  { transform: rotateY(0deg) translateZ(50px); }
 .back   { transform: rotateY(180deg) translateZ(50px); }
 .right  { transform: rotateY(90deg) translateZ(50px); }
@@ -231,6 +274,7 @@ body {
 
 </head>
 <body bgcolor="darkgoldenrod">
+    <div class="op"></div>
     <div class="Navbar">
     <div class="style">
         <embed src="../images/117 Security Force bage (1).pdf"
@@ -264,8 +308,8 @@ body {
             </button>
             <div id="servicesDropdown" class="dropdown-menu">
                 <a href="/pages/Security.html">Security</a>
-                <a href="/pages//office.html">Office Assistant</a>
-                <a href="/pages//House-Keeping.html">House Keeping</a>
+                <a href="/pages/office.html">Office Assistant</a>
+                <a href="/pages/House-Keeping.html">House Keeping</a>
             </div>
         </div>
 
@@ -274,45 +318,69 @@ body {
         </form>
         <button>Our Clients</button>
         <button>Newsletter</button>
-        <form action="/pages/EnquriyForm.html">
-            <button>New Enquiry</button>
-        </form>
         <form action="/pages/Contact.html">
             <button>Contact Us</button>
         </form>
     </div>
 </div>
 <center>
-<div class="u" style="background-color: darkgoldenrod; align-items: center; margin-top: 180px; padding: 25px; border: black 2px solid; width: 500px; column-gap: 130px; color: black; font-weight: bold;">
+<div class="u" style="display: flex; align-items: center; justify-content: space-around; margin-top: 180px;">
+    <center>
     <div>
-        <h1 style="text-decoration: underline;">Contact us</h1>
-    </div>
-    <br>
-    <div style="display: flex; justify-content: space-between; column-gap: 30px;">
-    <div>
-        <h3>Address</h3>
-        <address>
-            <p>177 Security force</p>
-            <p>No 11/25 Abirami Nagar, Thiruverkadu</p>
-            <p>Chennai 600077</p>
-        </address>
-    </div>
-    <div>
-        <h3>Email</h3>
-        <p>117@gmail.com</p>
-    </div>
-    <div>
-        <h3>Contact Number</h3>
-        <p>0000000000</p>
+        <div style="display: flex; padding: 25px; border-radius: 25px; align-items: center; column-gap:10px; background-color: white; color: black;" class="iy">
+            <i class="fa-solid fa-map-location-dot" style="font-size: 20px;"></i>
+            <div>
+               <p style="width: 200px;">117 Security force
+                    No 11/25 Abirami Nagar, Thiruverkadu Chennai 600077
+                 </p>
+            </div>
+            </div>
+            <br>
+            <br>
+            <div style="display: flex; align-items: center; column-gap:10px; background-color: white; color: black; padding: 25px; border-radius: 25px;">
+                <i class="fa-solid fa-phone"></i>
+                <div>
+                    <p>0000000000</p>
+                </div>
+            </div>
+            <br>
+            <br>
+            <div style="display: flex; align-items: center; column-gap:10px; background-color:white; padding: 25px; border-radius: 25px; color: black;">
+                <i class="fa-regular fa-envelopes-bulk"></i>
+                <div>
+                    <p>177@gmail.com</p>
+                </div>
+            </div>
+        </div>
+    </center>
+<div>
+        <button class="btn" style="width: 200px;" onclick="openPopup()">Get in Touch</button>
     </div>
     </div>
 </div>
 </center>
 <br>
-<br>
-<bR>
-<br>
-<br>
+<div class="Side-bar">
+    <p style="color: black; margin-left: 450px;" onclick="closePopup()"><i class="fa-solid fa-x"></i></p>
+    <br>
+   <div style="display: flex; align-items: center; justify-content: space-between;">
+       <input type="text" placeholder="Your Name" class="inp">
+       <input type="text" placeholder="Company Name" class="inp">
+   </div>
+   <br>
+   <br>
+   <div style="display: flex; align-items: center; justify-content: space-between;">
+      <input type="number" placeholder="Phone number" class="inp">
+      <input type="gmail" placeholder="Gmail" class="inp">
+   </div>
+   <br>
+   <br>
+   <input type="text" placeholder="write your message" class="message">
+   <br>
+   <br>
+   <button class="btn" style="width: 200px;">Submit</button>
+</div> 
+<div class="op"></div>
 <footer style="background-color: rgba(0,0,0,0.8); padding: 20px; color: #fff;">
   <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap;">
 
@@ -343,6 +411,20 @@ body {
 </html>
 
 <script>
+    const sidebar = document.querySelector(".Side-bar")
+    const op = document.querySelector(".op")
+    function openPopup(){
+            op.style.opacity = "0.7";
+    op.style.visibility = "visible";
+    sidebar.style.right = "20px";
+
+    }
+    function closePopup(){
+            op.style.opacity = "0";
+    op.style.visibility = "hidden";
+    sidebar.style.right = "-580px";
+
+    }
     function toggleDropdown(dropdownId, btn) {
     const dropdown = document.getElementById(dropdownId);
     const icon = btn.querySelector('i');
