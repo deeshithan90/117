@@ -25,8 +25,8 @@
 
 /* BODY */
 body {
-    background-color: darkgoldenrod;
-    color: white;
+    background-color: white;
+    color: darkgoldenrod;
     display: flex;
     flex-direction: column;
     padding-top: 160px; /* Fix for fixed navbar */
@@ -165,7 +165,7 @@ body {
 }
 
 .hero img {
-    width: 150px;
+    width: 350px;
     border: 2px solid black;
     border-radius: 10px;
 }
@@ -289,6 +289,133 @@ body {
     margin: 0;
 }
 
+/* FLIP CARD EFFECT */
+.flip-card {
+  background-color: transparent;
+  width: 150px;
+  height: 150px;
+  perspective: 1000px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flip-card-front {
+  /* Keep front as is (image) */
+}
+
+.flip-card-back {
+  background-color: black;
+  color: white;
+  transform: rotateY(180deg);
+  padding: 10px;
+  font-size: 14px;
+  text-align: center;
+}
+
+.Our-Strengths{
+    padding: 15px;
+    margin: 10px;
+}
+
+.white-s{
+    background-color: whitesmoke;
+    padding: 25px;
+}
+
+.row{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.call-us{
+    background-color: darkgoldenrod;
+    color: black;
+    padding: 25px;
+    font-size: 30px;
+}
+.dropbtn-footer {
+    background: none;
+    border: none;
+    color: darkgoldenrod;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 5px 10px;
+    position: relative;
+}
+
+/* Footer Dropdown Menu */
+.dropdown-menu-footer {
+    display: none;
+    position: absolute;
+    background: white; /* White background so links are visible */
+    border-radius: 6px;
+    min-width: 160px;
+    margin-top: 6px;
+    z-index: 999;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* Show dropdown */
+.dropdown-menu-footer.show {
+    display: block;
+}
+
+/* Links inside dropdown */
+.dropdown-menu-footer a {
+    display: block;
+    padding: 10px;
+    color: darkgoldenrod;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Hover effect for links */
+
+
+/* Container must be relative */
+.footer-dropdown-container {
+    position: relative;
+    display: inline-block;
+}
+
+.footer-link {
+    text-decoration: none;
+    color: darkgoldenrod;
+    font-size: 14px;
+    padding: 8px 12px;
+    background: white;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+.footer-link:hover {
+    background: black;
+    color: white;
+}
+
+
 </style>
 </head>
 
@@ -335,7 +462,7 @@ body {
             <button>Gallery</button>
         </form>
         <button>Our Clients</button>
-        <button>Newsletter</button>
+        <button>Careers</button>
         <form action="/pages/Contact.html">
             <button>Contact Us</button>
         </form>
@@ -356,7 +483,7 @@ body {
 
 <div class="hero">
     <div>
-        <img src="./images/Security man.jpg" alt="Security Man">
+        <img src="./images/securityman78.jpg" alt="Security Man">
     </div>
     <div class="hero-text">
         <h1>"Your Safety, Our Priority"</h1>
@@ -423,39 +550,192 @@ body {
         <h4>Fast Working</h4>
     </div>
 </div>
-
+<br>
+<br>
+<h1>Our Strength`s</h1>
+<br>
+<div class="Our-Strengths">
+     <div class="row">
+         <div style="width: 200px;">
+              <img src="./images/Customer.jpg" width="100px"/>
+              <br>
+              <p>Customer Relstionship Managmant</p>
+         </div>
+         <div style="width: 200px;">
+            <img src="./images/s.png" width="100px">
+            <br>
+            <p>Expericed and Dedicatedd staff</p>
+         </div>
+         <div style="width: 200px;">
+            <img src="./images/tick.jpg" width="100px">
+            <br>
+            <p>Quality cheks by Hightly Specialized Team</p>
+         </div>
+     </div>
+     <br>
+     <br>
+     <div class="row">
+         <div style="width: 200px;">
+              <img src="./images/quality.jpg" width="100px"/>
+              <br>
+              <p>Quality services & Assessment Reports</p>
+         </div>
+         <div style="width: 200px;">
+            <img src="./images/clock.jpg" width="100px">
+            <br>
+            <p>Round The clock supports</p>
+         </div>
+         <div style="width: 200px;">
+            <img src="./images/patrolling.jpg" width="100px">
+            <br>
+            <p>patrolling services 12hours</p>
+         </div>
+     </div>
+</div>
+<br>
+<br>
+<br>
+<h1>Our Security</h1>
+<br>
+<br>
+<div class="Our Security">
+   <div class="row">
+       <div style="background-color: white; padding: 25px; border-radius: 25px;">
+          <img src="./images/hotel.webp" width="200px" height="200px"/>
+          <br>
+          <p style="width: 250px; font-weight: bold;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis perspiciatis quo maxime impedit porro molestiae eum quas ipsa rerum dolores nostrum corrupti, dicta esse possimus nemo magni quod eos! Fugit nulla voluptatem sapiente rem ab molestias ex nisi porro aliquid.</p>
+       </div>
+       <div style="background-color: white; padding: 25px; border-radius: 25px;">
+          <img src="./images/school.webp" width="200px" height="200px"/>
+          <br>
+          <p style="width: 250px; font-weight: bold;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis perspiciatis quo maxime impedit porro molestiae eum quas ipsa rerum dolores nostrum corrupti, dicta esse possimus nemo magni quod eos! Fugit nulla voluptatem sapiente rem ab molestias ex nisi porro aliquid.</p>
+       </div>
+       <div style="background-color: white; padding: 25px; border-radius: 25px;">
+          <img src="./images/hosipital.webp" width="200px" height="200px"/>
+          <br>
+          <p style="width: 250px; font-weight: bold;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis perspiciatis quo maxime impedit porro molestiae eum quas ipsa rerum dolores nostrum corrupti, dicta esse possimus nemo magni quod eos! Fugit nulla voluptatem sapiente rem ab molestias ex nisi porro aliquid.</p>
+       </div>
+       <div style="background-color: white; padding: 25px; border-radius: 25px;">
+          <img src="./images/gated.webp" width="200px" height="200px"/>
+          <br>
+          <p style="width: 250px; font-weight: bold;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis perspiciatis quo maxime impedit porro molestiae eum quas ipsa rerum dolores nostrum corrupti, dicta esse possimus nemo magni quod eos! Fugit nulla voluptatem sapiente rem ab molestias ex nisi porro aliquid.</p>
+       </div>
+   </div>
+</div>
+<br>
+<br>
+<div class="white-s">
+    <h1>Who we are?</h1>
+    <br>
+    <br>
+    <div style="display: flex; justify-content: space-around; align-items: center;">
+        <div>
+            <p style="width: 300px;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat sint esse delectus ipsa beatae nemo necessitatibus atque? Perferendis, eum quisquam!</p>
+            <br>
+            <button class="btn" style="border-radius: 0px; width: 100px;">Read more</button>
+        </div>
+        <img src="./images/pse.jpg" width="300px">
+    </div>
+</div>
+<br>
+<br>
+<br>
+<div class="call-us">
+    <center>
+   <h2>Call-us</h2>
+   <p>To know more about our services & pricing</p>
+   <h3>(9+)00000000</h3>
+   </center>
+</div>
+<br>
 <br>
 <br>
 <!-- TEAM SECTION -->
-<div style="display: flex; align-items: center; column-gap: 40px; margin-top: 50px;">
-<div style="display: flex; align-items: center; column-gap: 80px;">
-    <img style="border: black 2px solid;" src="./images/IMG-20251228-WA0003.jpg" width="150px" height="150px">
-    <p style="width: 300px;">Mr.Dhanabal (Ex. Police Officer) Director of 117 Security force . During his service period he attend assam war. his paramiliatary training gave inspiration to launch117 security force.  </p>
-</div>
-<br>
-<br>
-<br>
-<div style="display: flex; align-items: center; column-gap: 80px;">
-    <img style="border: black 2px solid;" src="./images/IMG-20251228-WA0001.jpg" width="150px">
-    <p style="width: 300px;">Mr.Murugan Manging Director of 117 security force, And he worked in vigilance department. He plays vital role in security agencies and worked as a advisor in many security agency. </p>
-</div>
-</div>
+<div style="display: flex; align-items: center; justify-content: space-around; margin-top: 50px; flex-wrap: wrap;">
 
-<!-- FOOTER -->
-<footer style="background-color: rgba(0,0,0,0.8); padding: 20px; color: #fff; margin-top: 50px;">
-  <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap;">
-    <div style="display: flex; align-items: center; gap: 10px;">
-      <h3 style="margin: 0; font-size: 16px;">117 Security Force</h3>
-    </div>
-    <p style="margin: 0; font-size: 13px;">www.117securityforce.com</p>
-    <div>
-      <span style="font-size: 13px;">Follow:</span>
-      <i class="fa-brands fa-whatsapp" style="margin-left: 8px;"></i>
-      <i class="fa-brands fa-facebook" style="margin-left: 8px;"></i>
-      <i class="fa-brands fa-instagram" style="margin-left: 8px;"></i>
+  <div class="flip-card" style="width: 300px; height: 300px;">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+        <img src="./images/IMG-20251228-WA0003.jpg" alt="Mr.Dhanabal" style="width:100%; height:100%; border:2px solid black;">
+      </div>
+      <div class="flip-card-back">
+        <p style="padding: 10px; font-size: 16px;">
+          Mr.Dhanabal (Ex. Police Officer) Director of 117 Security force. During his service period he attended Assam war. His paramilitary training inspired him to launch 117 Security Force.
+        </p>
+      </div>
     </div>
   </div>
-  <div style="margin-top: 8px; font-size: 12px; text-align: center; color: darkgoldenrod;">
+
+  <div class="flip-card" style="width: 300px; height: 300px;">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+        <img src="./images/IMG-20251228-WA0001.jpg" alt="Mr.Murugan" style="width:100%; height:100%; border:2px solid black;">
+      </div>
+      <div class="flip-card-back">
+        <p style="padding: 10px; font-size: 16px;">
+          Mr.Murugan, Managing Director of 117 Security Force, worked in the vigilance department. He plays a vital role in security agencies and advises many security agencies.
+        </p>
+      </div>
+    </div>
+  </div>
+
+</div>
+<!-- FOOTER -->
+<footer style="background-color: rgba(0,0,0,0.9); padding: 40px 20px; color: #fff; margin-top: 50px;">
+  <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 40px;">
+
+    <!-- Company Info -->
+    <div style="flex: 1; min-width: 200px;">
+      <h3 style="margin: 0 0 10px 0; font-size: 18px;">117 Security Force</h3>
+      <p style="margin: 0; font-size: 14px;">www.117securityforce.com</p>
+      <div style="margin-top: 10px;">
+        <span style="font-size: 14px;">Follow:</span>
+        <i class="fa-brands fa-whatsapp" style="margin-left: 8px;"></i>
+        <i class="fa-brands fa-facebook" style="margin-left: 8px;"></i>
+        <i class="fa-brands fa-instagram" style="margin-left: 8px;"></i>
+      </div>
+    </div>
+
+    <!-- Footer Links -->
+    <div style="flex: 2; min-width: 300px; display: flex; flex-wrap: wrap; gap: 40px;">
+
+      <!-- About Us Dropdown -->
+      <div style="position: relative;">
+        <button class="dropbtn-footer" onclick="toggleFooterDropdown('aboutFooterDropdown', this)">
+               About Us <i class="fa-solid fa-chevron-down"></i>
+        </button>
+
+        <div id="aboutFooterDropdown" class="dropdown-menu-footer" style="display: none; position: absolute; top: 28px; left: 0; background: black; border-radius: 5px; overflow: hidden; min-width: 150px; z-index: 10;">
+          <a href="/pages/Who-we-are.html" style="color: darkgoldenrod; text-decoration: none; display: block; padding: 10px;">Who We Are</a>
+          <a href="/pages/Vision.html" style="color: darkgoldenrod; text-decoration: none; display: block; padding: 10px;">Vision & Mission</a>
+        </div>
+      </div>
+
+      <!-- Our Services Dropdown -->
+      <div style="position: relative;">
+        <button class="dropbtn-footer" onclick="toggleFooterDropdown('servicesFooterDropdown', this)" style="background: none; border: none; color: darkgoldenrod; font-size: 16px; cursor: pointer;">
+          Our Services <i class="fa-solid fa-chevron-down"></i>
+        </button>
+        <div id="servicesFooterDropdown" class="dropdown-menu-footer" style="display: none; position: absolute; top: 28px; left: 0; background: black; border-radius: 5px; overflow: hidden; min-width: 150px; z-index: 10;">
+          <a href="/pages/Security.html" style="color: darkgoldenrod; text-decoration: none; display: block; padding: 10px;">Security</a>
+          <a href="/pages/office.html" style="color: darkgoldenrod; text-decoration: none; display: block; padding: 10px;">Office Assistant</a>
+          <a href="/pages/House-Keeping.html" style="color: darkgoldenrod; text-decoration: none; display: block; padding: 10px;">House Keeping</a>
+        </div>
+      </div>
+
+      <!-- Other Links -->
+      <div>
+        <a href="/pages/Galley.html" style="color: darkgoldenrod; text-decoration: none; display: block; margin-bottom: 8px;">Gallery</a>
+        <a href="#" style="color: darkgoldenrod; text-decoration: none; display: block; margin-bottom: 8px;">Our Clients</a>
+        <a href="#" style="color: darkgoldenrod; text-decoration: none; display: block; margin-bottom: 8px;">Newsletter</a>
+        <a href="/pages/Contact.html" style="color: darkgoldenrod; text-decoration: none; display: block;">Contact Us</a>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Footer Bottom -->
+  <div style="margin-top: 30px; font-size: 12px; text-align: center; color: darkgoldenrod;">
     © 2025 All rights reserved | Deeshi Soft Technology Services
   </div>
 </footer>
@@ -510,6 +790,37 @@ function aiSpeak(text) {
         slides[current].classList.add("active");
     }, 2000); // 2 seconds
 })();
+
+  // Footer dropdown toggle function
+  function toggleFooterDropdown(dropdownId, btn) {
+    const dropdown = document.getElementById(dropdownId);
+    const icon = btn.querySelector('i');
+
+    // Close other footer dropdowns
+    const allDropdowns = document.querySelectorAll('.dropdown-menu-footer');
+    const allIcons = document.querySelectorAll('.dropbtn-footer i');
+    allDropdowns.forEach(d => { if(d !== dropdown) d.style.display = 'none'; });
+    allIcons.forEach(ic => { if(ic !== icon) ic.classList.replace('fa-chevron-up','fa-chevron-down'); });
+
+    // Toggle current dropdown
+    if(dropdown.style.display === 'block') {
+      dropdown.style.display = 'none';
+      icon.classList.replace('fa-chevron-up','fa-chevron-down');
+    } else {
+      dropdown.style.display = 'block';
+      icon.classList.replace('fa-chevron-down','fa-chevron-up');
+    }
+  }
+
+  // Close footer dropdowns when clicking outside
+  window.addEventListener('click', function(e){
+    if(!e.target.matches('.dropbtn-footer')) {
+      document.querySelectorAll('.dropdown-menu-footer').forEach(dd => dd.style.display = 'none');
+      document.querySelectorAll('.dropbtn-footer i').forEach(ic => ic.classList.replace('fa-chevron-up','fa-chevron-down'));
+    }
+  });
+</script>
+
 </script>
 
 </body>
