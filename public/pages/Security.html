@@ -210,6 +210,65 @@ body {
     color: white;
     box-shadow: 0 5px 20px rgba(0,0,0,0.5);
 }
+.dropbtn-footer {
+    background: none;
+    border: none;
+    color: darkgoldenrod;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 5px 10px;
+    position: relative;
+}
+
+/* Footer Dropdown Menu */
+.dropdown-menu-footer {
+    display: none;
+    position: absolute;
+    background: white; /* White background so links are visible */
+    border-radius: 6px;
+    min-width: 160px;
+    margin-top: 6px;
+    z-index: 999;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* Show dropdown */
+.dropdown-menu-footer.show {
+    display: block;
+}
+
+/* Links inside dropdown */
+.dropdown-menu-footer a {
+    display: block;
+    padding: 10px;
+    color: darkgoldenrod;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Hover effect for links */
+
+
+/* Container must be relative */
+.footer-dropdown-container {
+    position: relative;
+    display: inline-block;
+}
+
+.footer-link {
+    text-decoration: none;
+    color: darkgoldenrod;
+    font-size: 14px;
+    padding: 8px 12px;
+    background: white;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+.footer-link:hover {
+    background: black;
+    color: white;
+}
 
 .front  { transform: rotateY(0deg) translateZ(50px); }
 .back   { transform: rotateY(180deg) translateZ(50px); }
@@ -266,7 +325,7 @@ body {
             <button>Gallery</button>
         </form>
         <button>Our Clients</button>
-        <button>Newsletter</button>
+        <button>Careers</button>
         <form action="/pages/Contact.html">
             <button>Contact Us</button>
         </form>
@@ -292,28 +351,61 @@ body {
 </div>
 <br>
 <br>
-<footer style="background-color: rgba(0,0,0,0.8); padding: 20px; color: #fff;">
-  <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap;">
+<footer style="background-color: rgba(0,0,0,0.9); padding: 40px 20px; color: #fff; margin-top: 50px;">
+  <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 40px;">
 
-    <!-- Logo & Name -->
-    <div style="display: flex; align-items: center; gap: 10px;">
-      <h3 style="margin: 0; font-size: 16px;">117 Security Force</h3>
+    <!-- Company Info -->
+    <div style="flex: 1; min-width: 200px;">
+      <h3 style="margin: 0 0 10px 0; font-size: 18px;">117 Security Force</h3>
+      <p style="margin: 0; font-size: 14px;">www.117securityforce.com</p>
+      <div style="margin-top: 10px;">
+        <span style="font-size: 14px;">Follow:</span>
+        <i class="fa-brands fa-whatsapp" style="margin-left: 8px;"></i>
+        <i class="fa-brands fa-facebook" style="margin-left: 8px;"></i>
+        <i class="fa-brands fa-instagram" style="margin-left: 8px;"></i>
+      </div>
     </div>
 
-    <!-- Website -->
-    <p style="margin: 0; font-size: 13px;">www.117securityforce.com</p>
+    <!-- Footer Links -->
+    <div style="flex: 2; min-width: 300px; display: flex; flex-wrap: wrap; gap: 40px;">
 
-    <!-- Social Media -->
-    <div>
-      <span style="font-size: 13px;">Follow:</span>
-      <i class="fa-brands fa-whatsapp" style="margin-left: 8px;"></i>
-      <i class="fa-brands fa-facebook" style="margin-left: 8px;"></i>
-      <i class="fa-brands fa-instagram" style="margin-left: 8px;"></i>
+      <!-- About Us Dropdown -->
+      <div style="position: relative;">
+        <button class="dropbtn-footer" onclick="toggleFooterDropdown('aboutFooterDropdown', this)">
+               About Us <i class="fa-solid fa-chevron-down"></i>
+        </button>
+
+        <div id="aboutFooterDropdown" class="dropdown-menu-footer" style="display: none; position: absolute; top: 28px; left: 0; background: black; border-radius: 5px; overflow: hidden; min-width: 150px; z-index: 10;">
+          <a href="/pages/Who-we-are.html" style="color: darkgoldenrod; text-decoration: none; display: block; padding: 10px;">Who We Are</a>
+          <a href="/pages/Vision.html" style="color: darkgoldenrod; text-decoration: none; display: block; padding: 10px;">Vision & Mission</a>
+        </div>
+      </div>
+
+      <!-- Our Services Dropdown -->
+      <div style="position: relative;">
+        <button class="dropbtn-footer" onclick="toggleFooterDropdown('servicesFooterDropdown', this)" style="background: none; border: none; color: darkgoldenrod; font-size: 16px; cursor: pointer;">
+          Our Services <i class="fa-solid fa-chevron-down"></i>
+        </button>
+        <div id="servicesFooterDropdown" class="dropdown-menu-footer" style="display: none; position: absolute; top: 28px; left: 0; background: black; border-radius: 5px; overflow: hidden; min-width: 150px; z-index: 10;">
+          <a href="/pages/Security.html" style="color: darkgoldenrod; text-decoration: none; display: block; padding: 10px;">Security</a>
+          <a href="/pages/office.html" style="color: darkgoldenrod; text-decoration: none; display: block; padding: 10px;">Office Assistant</a>
+          <a href="/pages/House-Keeping.html" style="color: darkgoldenrod; text-decoration: none; display: block; padding: 10px;">House Keeping</a>
+        </div>
+      </div>
+
+      <!-- Other Links -->
+      <div>
+        <a href="/pages/Galley.html" style="color: darkgoldenrod; text-decoration: none; display: block; margin-bottom: 8px;">Gallery</a>
+        <a href="#" style="color: darkgoldenrod; text-decoration: none; display: block; margin-bottom: 8px;">Our Clients</a>
+        <a href="#" style="color: darkgoldenrod; text-decoration: none; display: block; margin-bottom: 8px;">Newsletter</a>
+        <a href="/pages/Contact.html" style="color: darkgoldenrod; text-decoration: none; display: block;">Contact Us</a>
+      </div>
+
     </div>
   </div>
 
-  <!-- Bottom Line -->
-  <div style="margin-top: 8px; font-size: 12px; text-align: center; color: darkgoldenrod;">
+  <!-- Footer Bottom -->
+  <div style="margin-top: 30px; font-size: 12px; text-align: center; color: darkgoldenrod;">
     © 2025 All rights reserved | Deeshi Soft Technology Services
   </div>
 </footer>
@@ -342,6 +434,33 @@ body {
     }
 }
 
+function toggleFooterDropdown(dropdownId, btn) {
+    const dropdown = document.getElementById(dropdownId);
+    const icon = btn.querySelector('i');
+
+    // Close other footer dropdowns
+    const allDropdowns = document.querySelectorAll('.dropdown-menu-footer');
+    const allIcons = document.querySelectorAll('.dropbtn-footer i');
+    allDropdowns.forEach(d => { if(d !== dropdown) d.style.display = 'none'; });
+    allIcons.forEach(ic => { if(ic !== icon) ic.classList.replace('fa-chevron-up','fa-chevron-down'); });
+
+    // Toggle current dropdown
+    if(dropdown.style.display === 'block') {
+      dropdown.style.display = 'none';
+      icon.classList.replace('fa-chevron-up','fa-chevron-down');
+    } else {
+      dropdown.style.display = 'block';
+      icon.classList.replace('fa-chevron-down','fa-chevron-up');
+    }
+  }
+
+  // Close footer dropdowns when clicking outside
+  window.addEventListener('click', function(e){
+    if(!e.target.matches('.dropbtn-footer')) {
+      document.querySelectorAll('.dropdown-menu-footer').forEach(dd => dd.style.display = 'none');
+      document.querySelectorAll('.dropbtn-footer i').forEach(ic => ic.classList.replace('fa-chevron-up','fa-chevron-down'));
+    }
+  });
 // Close dropdowns when clicking outside
 window.onclick = function(e) {
     if (!e.target.matches('.dropbtn')) {
