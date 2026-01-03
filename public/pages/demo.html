@@ -1,0 +1,104 @@
+Got it — you want a rolling/sliding text effect in HTML, CSS, and optionally JavaScript.
+Here’s a complete, runnable example that creates a smooth, continuous sliding text animation.
+
+Example: Rolling Slide Text
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rolling Slide Text</title>
+<style>
+    /* Page styling */
+    body {
+        background: #111;
+        color: white;
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        overflow: hidden;
+    }
+
+    /* Container for sliding text */
+    .slider {
+        position: relative;
+        width: 100%;
+        max-width: 600px;
+        overflow: hidden;
+        border: 2px solid #fff;
+        background: #222;
+        padding: 10px 0;
+    }
+
+    /* Text that will slide */
+    .slide-text {
+        display: inline-block;
+        white-space: nowrap;
+        padding-left: 100%; /* Start from outside right */
+        animation: slide-left 10s linear infinite;
+        font-size: 1.5rem;
+    }
+
+    /* Keyframes for sliding effect */
+    @keyframes slide-left {
+        0% {
+            transform: translateX(0);
+        }
+        100% {
+            transform: translateX(-100%);
+        }
+    }
+</style>
+</head>
+<body>
+
+<div class="slider">
+    <div class="slide-text">🚀 Welcome to My Website — Enjoy the Rolling Slide Text Effect! 🚀</div>
+</div>
+
+</body>
+</html>
+
+How It Works
+
+HTML
+
+.slider is the container that hides overflow.
+.slide-text contains the text to animate.
+
+CSS Animation
+
+white-space: nowrap ensures the text stays in one line.
+padding-left: 100% starts the text off-screen to the right.
+@keyframes slide-left moves the text from right to left continuously.
+animation: slide-left 10s linear infinite makes it loop forever.
+
+JavaScript (Optional)
+If you want dynamic text changes, you can add:
+
+<script>
+const messages = [
+    "🚀 Welcome to My Website!",
+    "💡 Learn HTML, CSS, and JavaScript!",
+    "🔥 Smooth Rolling Text Animation!"
+];
+let index = 0;
+const textElement = document.querySelector('.slide-text');
+
+setInterval(() => {
+    index = (index + 1) % messages.length;
+    textElement.textContent = messages[index];
+}, 10000); // Change every 10 seconds
+</script>
+
+
+✅ Advantages of this method
+
+Works in all modern browsers.
+No external libraries needed.
+Fully customizable speed, colors, and font size.
+
+If you want, I can also give you a version where the text loops seamlessly without a gap — perfect for a news ticker effect.
+Do you want me to prepare that seamless version?

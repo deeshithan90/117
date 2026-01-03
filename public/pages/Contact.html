@@ -1,578 +1,1102 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact us</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us - 117 Security Force</title>
+
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-
-<!-- Font Awesome -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
-    * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Oswald", sans-serif;
+* {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Oswald", sans-serif;
+        }
+
+        /* BODY */
+        body {
+            background-color: white;
+            color: darkgoldenrod;
+            display: flex;
+            flex-direction: column;
+            padding-top: 160px;
+            /* Fix for fixed navbar */
+        }
+
+        .l {
+            font-family: "Oswald", sans-serif;
+        }
+
+        /* BUTTONS */
+        .btn {
+            padding: 10px 20px;
+            background-color: darkgoldenrod;
+            border: 2px solid black;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background-color: black;
+            color: white;
+        }
+
+        /* NAVBAR */
+        .Navbar {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+
+        /* LOGO AREA */
+        .style {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo {
+            border-radius: 15px;
+        }
+
+        /* BUTTON LINKS */
+        .button-links {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            flex-wrap: wrap;
+        }
+
+        /* NAVBAR BUTTONS */
+        .button-links button {
+            padding: 8px 14px;
+            border-radius: 12px;
+            border: none;
+            background: white;
+            color: darkgoldenrod;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .button-links button:hover {
+            background: black;
+            color: white;
+        }
+
+        /* DROPDOWN */
+        .dropdown-container {
+            position: relative;
+        }
+
+        .dropbtn {
+            padding: 8px 14px;
+            border-radius: 12px;
+            border: none;
+            background: white;
+            color: darkgoldenrod;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .dropbtn:hover {
+            background: black;
+            color: white;
+        }
+
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 45px;
+            left: 0;
+            width: 120px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+            overflow: hidden;
+            transform: rotateX(-90deg);
+            transform-origin: top;
+            transition: transform 0.4s ease;
+        }
+
+        .dropdown-menu.show {
+            display: block;
+            transform: rotateX(0deg);
+        }
+
+        .dropdown-menu a {
+            display: block;
+            padding: 12px;
+            text-decoration: none;
+            color: darkgoldenrod;
+            transition: background 0.3s;
+        }
+
+        .dropdown-menu a:hover {
+            background: black;
+            color: white;
+        }
+
+        /* HERO SECTION */
+        .hero {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 80px;
+            margin: 40px 20px;
+            flex-wrap: wrap;
+        }
+
+        .hero img {
+            width: 250px;
+            border-radius: 10px;
+        }
+
+        .hero-text h1 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .hero-text h3 {
+            width: 300px;
+            font-weight: 400;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        /* CUBE ANIMATION */
+        .cube-container {
+            width: 100px;
+            height: 100px;
+            perspective: 1000px;
+            margin-right: 1100px;
+            margin-top: 280px;
+            position: absolute;
+            top: -40px;
+            left: 40px;
+        }
+
+        .cube {
+            width: 100px;
+            height: 100px;
+            position: relative;
+            transform-style: preserve-3d;
+            animation: spinCube 5s linear infinite;
+        }
+
+        .face {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background: darkgoldenrod;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 25px;
+            font-weight: bold;
+            color: white;
+        }
+
+        /* CUBE FACES */
+        .front {
+            transform: rotateY(0deg) translateZ(50px);
+        }
+
+        .back {
+            transform: rotateY(180deg) translateZ(50px);
+        }
+
+        .right {
+            transform: rotateY(90deg) translateZ(50px);
+        }
+
+        .left {
+            transform: rotateY(-90deg) translateZ(50px);
+        }
+
+        .top {
+            transform: rotateX(90deg) translateZ(50px);
+        }
+
+        .bottom {
+            transform: rotateX(-90deg) translateZ(50px);
+        }
+
+        @keyframes spinCube {
+            0% {
+                transform: rotateX(0deg) rotateY(0deg);
+            }
+
+            100% {
+                transform: rotateX(360deg) rotateY(360deg);
+            }
+        }
+
+        /* ===== BIG IMAGE SLIDER LEFT → RIGHT ===== */
+        .image-slider {
+            position: relative;
+            width: 600px;
+            height: 300px;
+            overflow: hidden;
+            margin-top: 40px;
+        }
+
+        .image-slider .slide {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            left: -100%;
+            opacity: 0;
+            transition: left 0.8s ease, opacity 0.8s ease;
+        }
+
+        .image-slider .slide.active {
+            left: 0;
+            opacity: 1;
+        }
+
+        .image-slider .slide.exit {
+            left: 100%;
+            opacity: 0;
+        }
+
+        /* OUR FACILITIES UPDATED */
+        .main-s {
+            display: flex;
+            justify-content: space-around;
+            /* Center horizontally */
+            /* Space between circles */
+            /* Wrap on smaller screens */
+            padding: 15px;
+            align-items: center;
+        }
+
+        .s {
+            background-color: black;
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            /* Make it circular */
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            font-weight: bold;
+            padding: 5px;
+        }
+
+        .s i {
+            font-size: 30px;
+            /* Icon size */
+            margin-bottom: 5px;
+        }
+
+        .s h4 {
+            font-size: 15px;
+            /* Smaller text inside circle */
+            margin: 0;
+        }
+
+        /* FLIP CARD EFFECT */
+        .flip-card {
+            background-color: transparent;
+            width: 150px;
+            height: 150px;
+            perspective: 1000px;
+        }
+
+        .flip-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.8s;
+            transform-style: preserve-3d;
+        }
+
+        .flip-card:hover .flip-card-inner {
+            transform: rotateY(180deg);
+        }
+
+        .flip-card-front,
+        .flip-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .flip-card-front {
+            /* Keep front as is (image) */
+        }
+
+        .flip-card-back {
+            background-color: black;
+            color: white;
+            transform: rotateY(180deg);
+            padding: 10px;
+            font-size: 14px;
+            text-align: center;
+        }
+
+        .Our-Strengths {
+            padding: 15px;
+            margin: 10px;
+        }
+
+        .white-s {
+            background-color: whitesmoke;
+            padding: 25px;
+        }
+
+        .row {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+        }
+
+        .call-us {
+            background-color: darkgoldenrod;
+            color: black;
+            padding: 25px;
+            font-size: 30px;
+        }
+
+        .dropbtn-footer {
+            background: none;
+            border: none;
+            color: darkgoldenrod;
+            font-size: 16px;
+            cursor: pointer;
+            padding: 5px 10px;
+            position: relative;
+        }
+
+        /* Footer Dropdown Menu */
+        .dropdown-menu-footer {
+            display: none;
+            position: absolute;
+            background: white;
+            /* White background so links are visible */
+            border-radius: 6px;
+            min-width: 160px;
+            margin-top: 6px;
+            z-index: 999;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Show dropdown */
+        .dropdown-menu-footer.show {
+            display: block;
+        }
+
+        /* Links inside dropdown */
+        .dropdown-menu-footer a {
+            display: block;
+            padding: 10px;
+            color: darkgoldenrod;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* Hover effect for links */
+        /* Container must be relative */
+        .footer-dropdown-container {
+            position: relative;
+            display: inline-block;
+        }
+
+        .footer-link {
+            text-decoration: none;
+            color: darkgoldenrod;
+            font-size: 14px;
+            padding: 8px 12px;
+            background: white;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .footer-link:hover {
+            background: black;
+            color: white;
+        }
+
+        .g {
+            width: 100px;
+            border-radius: 1500px;
+        }
+
+        .side-navbar {
+            position: fixed;
+            top: 0;
+            left: -260px;
+            width: 260px;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            padding: 20px;
+            transition: 0.4s ease;
+            z-index: 2000;
+        }
+
+        .side-navbar a,
+        .side-dropbtn {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            margin: 5px 0;
+            background: none;
+            border: none;
+            color: darkgoldenrod;
+            text-align: left;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .side-navbar a:hover,
+        .side-dropbtn:hover {
+            background: black;
+        }
+
+        /* DROPDOWN */
+        .side-dropdown {
+            display: none;
+            padding-left: 15px;
+        }
+
+        .slidering {
+            overflow: hidden;
+            border: 2px solid #fff;
+            background: white;
+            padding: 15px;
+            color: white;
+        }
+
+        /* Text that will slide */
+        .slidering {
+            overflow: hidden;
+            background: white;
+            padding: 15px 0;
+        }
+
+        .slider-track {
+            display: flex;
+            gap: 80px;
+            width: max-content;
+            animation: scroll 20s linear infinite;
+        }
+
+        .slider-track img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+        }
+
+        /* Smooth infinite animation */
+        @keyframes scroll {
+            0% {
+                transform: translateX(70%);
+            }
+
+            50% {
+                transform: translateX(-100%);
+            }
+            100%{
+                transform: translateX(70%)
+            }
+        }
+
+
+
+        .side-dropdown a {
+            font-size: 14px;
+        }
+
+        /* CLOSE BUTTON */
+        .close-btn {
+            font-size: 30px;
+            color: white;
+            cursor: pointer;
+            display: block;
+            text-align: right;
+        }
+
+        .ui {
+            display: none;
+        }
+
+        /* ===============================
+   MOBILE RESPONSIVE FIXES
+   =============================== */
+        @media screen and (max-width: 658px) {
+
+            /* BODY */
+            body {
+                padding-top: 110px;
+                /* smaller navbar */
+            }
+
+            /* NAVBAR */
+            .Navbar {
+                padding: 10px 15px;
+                flex-direction: row;
+            }
+
+            .style h1 {
+                font-size: 16px;
+                white-space: nowrap;
+            }
+
+            .g {
+                width: 45px;
+            }
+
+            /* HIDE DESKTOP MENU */
+            .button-links {
+                display: none;
+            }
+
+            /* HERO SECTION */
+            .hero {
+                flex-direction: column;
+                gap: 20px;
+                margin: 20px 10px;
+                text-align: center;
+            }
+
+            .hero img {
+                width: 90%;
+                max-width: 280px;
+            }
+
+            .hero-text h1 {
+                font-size: 20px;
+            }
+
+            .hero-text h3 {
+                width: 100%;
+                font-size: 14px;
+            }
+
+            /* CUBE */
+            .cube-container {
+                display: none;
+            }
+
+            /* IMAGE SLIDER */
+            .image-slider {
+                width: 90%;
+                height: 200px;
+                margin: 20px auto;
+            }
+
+            /* ABOUT SECTION */
+            body>div[style*="justify-content: space-around"] {
+                flex-direction: column;
+                gap: 20px;
+                text-align: center;
+            }
+
+            body>div img[width="400px"] {
+                width: 90%;
+            }
+
+            body>div p[style*="width: 550px"] {
+                width: 100% !important;
+                padding: 0 10px;
+            }
+
+            /* FACILITIES */
+            .main-s {
+                flex-wrap: wrap;
+                gap: 15px;
+            }
+
+            .s {
+                width: 120px;
+                height: 120px;
+            }
+
+            /* STRENGTH ROWS */
+            .row {
+                flex-direction: column;
+                gap: 20px;
+                text-align: center;
+            }
+
+            /* SECURITY CARDS */
+            .Our.Security .row,
+            .Our.Security {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .Our.Security .row>div {
+                width: 90%;
+            }
+
+            /* WHO WE ARE */
+            .white-s>div {
+                flex-direction: column;
+                gap: 20px;
+                text-align: center;
+            }
+
+            .white-s img {
+                width: 90%;
+            }
+
+            /* CALL US */
+            .call-us {
+                font-size: 18px;
+                padding: 20px;
+            }
+
+            /* FLIP CARDS */
+            .flip-card {
+                width: 100% !important;
+                height: 100px;
+            }
+
+            /* FOOTER */
+            footer>div {
+                flex-direction: column;
+                gap: 20px;
+                text-align: center;
+            }
+
+            footer a {
+                display: block;
+                margin-bottom: 6px;
+            }
+
+            .ui {
+                display: block;
+            }
+        }
+*{margin:0;padding:0;box-sizing:border-box;font-family:"Oswald",sans-serif;}
+body{background:darkgoldenrod;color:white;}
+
+/* ================= NAVBAR ================= */
+.Navbar{
+    width:100%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 40px;
+    background:rgba(0,0,0,0.7);
+    position:fixed;
+    top:0;
+    z-index:1000;
+}
+.style{display:flex;align-items:center;gap:15px;}
+.logo{border-radius:15px;}
+.button-links{
+    display:flex;
+    gap:15px;
+    align-items:center;
+}
+.button-links button{
+    padding:8px 14px;
+    border-radius:12px;
+    border:none;
+    background:white;
+    color:darkgoldenrod;
+    cursor:pointer;
+}
+.button-links button:hover{background:black;color:white;}
+.ui{display:none;font-size:26px;cursor:pointer;}
+
+/* Dropdown */
+.dropdown-container{position:relative;}
+.dropdown-menu{
+    display:none;
+    position:absolute;
+    top:45px;
+    left:0;
+    background:white;
+    border-radius:10px;
+    overflow:hidden;
+}
+.dropdown-menu a{
+    display:block;
+    padding:10px;
+    text-decoration:none;
+    color:darkgoldenrod;
+}
+.dropdown-menu a:hover{background:black;color:white;}
+.dropdown-menu.show{display:block;}
+
+/* ================= SIDE NAVBAR ================= */
+.sideNavbar{
+    position:fixed;
+    top:0;
+    left:-260px;
+    width:260px;
+    height:100%;
+    background:black;
+    padding:20px;
+    transition:0.3s;
+    z-index:1100;
+}
+.sideNavbar.active{left:0;}
+
+/* CLOSE BUTTON */
+.sideNavbar .close-btn{
+    font-size:22px;
+    color:white;
+    text-align:right;
+    cursor:pointer;
+    margin-bottom:20px;
 }
 
-/* BODY */
-body {
-    background-color: darkgoldenrod;
-    color: white;
-    display: flex;
-    flex-direction: column;
+.sideNavbar a{
+    display:block;
+    padding:12px;
+    margin-bottom:10px;
+    color:white;
+    text-decoration:none;
+    border-radius:8px;
+}
+.sideNavbar a:hover{background:darkgoldenrod;color:black;}
+
+/* ================= CONTACT SECTION ================= */
+.contact-wrap{
+    margin-top:160px;
+    display:flex;
+    justify-content:center;
+    gap:50px;
+    flex-wrap:wrap;
+    padding:20px;
+}
+.info-box{
+    background:white;
+    color:black;
+    padding:20px;
+    border-radius:20px;
+    width:280px;
+}
+.info-box i{font-size:20px;margin-right:10px;}
+.btn{
+    padding:10px 20px;
+    border-radius:25px;
+    border:2px solid black;
+    background:darkgoldenrod;
+    cursor:pointer;
+}
+.btn:hover{background:black;color:white;}
+
+/* ================= POPUP ================= */
+.overlay{
+    position:fixed;
+    top:0;left:0;
+    width:100%;height:100%;
+    background:black;
+    opacity:0;
+    visibility:hidden;
+    transition:0.3s;
+    z-index:1001;
+}
+.popup{
+    position:fixed;
+    right:-400px;
+    top:120px;
+    width:350px;
+    background:white;
+    color:black;
+    padding:20px;
+    border-radius:20px;
+    transition:0.4s;
+    z-index:1002;
+}
+.popup input,.popup textarea{
+    width:100%;
+    padding:10px;
+    margin-bottom:10px;
+    border-radius:15px;
+    border:2px solid black;
 }
 
-/* BUTTONS */
-.btn {
-    padding: 10px 20px;
-    background-color: darkgoldenrod;
-    border: 2px solid black;
-    border-radius: 25px;
-    cursor: pointer;
-    transition: 0.3s;
+/* ================= FOOTER ================= */
+footer{
+    background:black;
+    padding:40px 20px;
+    margin-top:50px;
 }
 
-.btn:hover {
-    background-color: black;
-    color: white;
-}
-
-/* NAVBAR */
-.Navbar {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px;
-    background: rgba(0, 0, 0, 0.7);
-    color: white;
-    position: fixed;
-}
-
-/* LOGO AREA */
-.style {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-}
-
-.logo {
-    border-radius: 15px;
-}
-
-/* BUTTON LINKS */
-.button-links {
-    display: flex;
-    align-items: center;
-    gap: 18px;
-    flex-wrap: wrap;
-}
-
-/* NAVBAR BUTTONS */
-.button-links button {
-    padding: 8px 14px;
-    border-radius: 12px;
-    border: none;
-    background: white;
-    color: darkgoldenrod;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.button-links button:hover {
-    background: black;
-    color: white;
-}
-
-/* DROPDOWN */
-.dropdown-container {
-    position: relative;
-}
-
-.dropbtn {
-    padding: 8px 14px;
-    border-radius: 12px;
-    border: none;
-    background: white;
-    color: darkgoldenrod;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.dropbtn:hover {
-    background: black;
-    color: white;
-}
-
-.dropdown-menu {
-    display: none;
-    position: absolute;
-    top: 45px;
-    left: 0;
-    width: 100px;
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.4);
-    overflow: hidden;
-    transform: rotateX(-90deg);
-    transform-origin: top;
-    transition: transform 0.4s ease;
-}
-
-.dropdown-menu.show {
-    display: block;
-    transform: rotateX(0deg);
-}
-
-.dropdown-menu a {
-    display: block;
-    padding: 12px;
-    text-decoration: none;
-    color: darkgoldenrod;
-    transition: background 0.3s;
-}
-
-.dropdown-menu a:hover {
-    background: black;
-    color: white;
-}
-
-/* HERO SECTION */
-.hero {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 80px;
-    margin: 40px 20px;
-    flex-wrap: wrap;
-}
-
-.hero img {
-    width: 150px;
-    border: 2px solid black;
-    border-radius: 10px;
-}
-
-.hero-text h1 {
-    font-size: 2rem;
-    margin-bottom: 10px;
-}
-
-.hero-text h3 {
-    width: 300px;
-    font-weight: 400;
-    margin-bottom: 20px;
-    text-align: center;
-}
-
-/* CUBE ANIMATION */
-.cube-container {
-    width: 100px;
-    height: 100px;
-    perspective: 1000px;
-    margin-right: 1100px;
-    margin-top: 280px;
-    position: absolute;
-    top: -40px;
-}
-
-.cube {
-    width: 100px;
-    height: 100px;
-    position: relative;
-    transform-style: preserve-3d;
-    animation: spinCube 5s linear infinite;
-}
-
-.face {
-    position: absolute;
-    width: 50px;
-    height: 50px;
-    background: rgba(0, 0, 0, 0.7);
-    border: 2px solid red;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 25px;
-    font-weight: bold;
-    color: white;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.5);
-}
-
-
-
-.iy:hover{
-   background-color: black;
-   color: white;
-}
-.Side-bar {
-    background-color: white;
-    position: fixed;
-    padding: 25px;
-    right: -580px;
-    top: 100px;
-    width: 500px;
-    transition: right 0.5s ease;
-    z-index: 2;
-    border-radius: 25px;
-}
-
-.dropbtn-footer {
-    background: none;
-    border: none;
-    color: darkgoldenrod;
-    font-size: 16px;
-    cursor: pointer;
-    padding: 5px 10px;
-    position: relative;
-}
-
-/* Footer Dropdown Menu */
-.dropdown-menu-footer {
-    display: none;
-    position: absolute;
-    background: white; /* White background so links are visible */
-    border-radius: 6px;
-    min-width: 160px;
-    margin-top: 6px;
-    z-index: 999;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-}
-
-/* Show dropdown */
-.dropdown-menu-footer.show {
-    display: block;
-}
-
-/* Links inside dropdown */
-.dropdown-menu-footer a {
-    display: block;
-    padding: 10px;
-    color: darkgoldenrod;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-/* Hover effect for links */
-
-
-/* Container must be relative */
-.footer-dropdown-container {
-    position: relative;
-    display: inline-block;
-}
-
-.footer-link {
-    text-decoration: none;
-    color: darkgoldenrod;
-    font-size: 14px;
-    padding: 8px 12px;
-    background: white;
-    border-radius: 12px;
-    transition: all 0.3s ease;
-}
-
-.footer-link:hover {
-    background: black;
-    color: white;
-}
-
-
-.inp{
-    background-color: white;
-    padding: 15px;
-    width: 200px;
-    outline: none;
-    border: black 2px solid;
-    border-radius: 25px;
-    z-index: 2;
-}
-
-.op {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: black;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.5s ease;
-    z-index: 1;
-}
-
-.message{
-    width: 300px;
-    height: 80px;
-    padding: 15px;
-    background-color: white;
-    border: black 2px solid;
-    outline: none;
-}
-.front  { transform: rotateY(0deg) translateZ(50px); }
-.back   { transform: rotateY(180deg) translateZ(50px); }
-.right  { transform: rotateY(90deg) translateZ(50px); }
-.left   { transform: rotateY(-90deg) translateZ(50px); }
-.top    { transform: rotateX(90deg) translateZ(50px); }
-.bottom { transform: rotateX(-90deg) translateZ(50px); }
-
-@keyframes spinCube {
-    0%   { transform: rotateX(0deg) rotateY(0deg); }
-    100% { transform: rotateX(360deg) rotateY(360deg); }
+/* ================= RESPONSIVE ================= */
+@media(max-width:685px){
+    .button-links{display:none;}
+    .ui{display:block;}
+    .contact-wrap{flex-direction:column;align-items:center;}
+    .popup{width:90%;right:-100%;}
 }
 </style>
-
-
 </head>
-<body bgcolor="darkgoldenrod">
-    <div class="op"></div>
-    <div class="Navbar">
-    <div class="style">
-        <embed src="../images/117 Security Force bage (1).pdf"
-               type="application/pdf"
-               width="90"
-               height="110"
-               class="logo">
-        <h1>117 Security Force</h1>
-    </div>
+<body>
 
-    <div class="button-links">
-        <form action="/">
-            <button>Home</button>
-        </form>
-
-        <!-- ABOUT US DROPDOWN -->
-        <div class="dropdown-container">
-            <button class="dropbtn" onmouseover="toggleDropdown('aboutDropdown', this)">
-                About Us <i class="fa-solid fa-chevron-down"></i>
-            </button>
-            <div id="aboutDropdown" class="dropdown-menu">
-                <a href="/pages/Who-we-are.html">Who We Are</a>
-                <a href="/pages/Vision.html">Vision & Mission</a>
-            </div>
+<!-- SIDE NAVBAR -->
+ <div class="Navbar">
+        <div class="style">
+            <img src="../images/logo.jpeg" class="g">
+            <h1 class="u">117 Security Force</h1>
         </div>
-
-        <!-- OUR SERVICES DROPDOWN -->
-        <div class="dropdown-container">
-            <button class="dropbtn" onmouseover="toggleDropdown('servicesDropdown', this)">
-                Our Services <i class="fa-solid fa-chevron-down"></i>
-            </button>
-            <div id="servicesDropdown" class="dropdown-menu">
-                <a href="/pages/Security.html">Security</a>
-                <a href="/pages/office.html">Office Assistant</a>
-                <a href="/pages/House-Keeping.html">House Keeping</a>
-            </div>
-        </div>
-
-        <form action="/pages/Galley.html">
-            <button>Gallery</button>
-        </form>
-        <button>Our Clients</button>
-        <button>Careers</button>
-        <form action="/pages/Contact.html">
-            <button>Contact Us</button>
-        </form>
-    </div>
-</div>
-<center>
-<div class="u" style="display: flex; align-items: center; justify-content: space-around; margin-top: 180px;">
-    <center>
-    <div>
-        <div style="display: flex; padding: 25px; border-radius: 25px; align-items: center; column-gap:10px; background-color: white; color: black;" class="iy">
-            <i class="fa-solid fa-map-location-dot" style="font-size: 20px;"></i>
-            <div>
-               <p style="width: 200px;">117 Security force
-                    No 11/25 Abirami Nagar, Thiruverkadu Chennai 600077
-                 </p>
-            </div>
-            </div>
-            <br>
-            <br>
-            <div style="display: flex; align-items: center; column-gap:10px; background-color: white; color: black; padding: 25px; border-radius: 25px;">
-                <i class="fa-solid fa-phone"></i>
-                <div>
-                    <p>0000000000</p>
+        <div class="button-links">
+            <form action="/">
+                <button>Home</button>
+            </form> <!-- ABOUT US DROPDOWN -->
+            <div class="dropdown-container">
+                <button class="dropbtn" onmouseover="toggleDropdown('aboutDropdown', this)"> About Us <i
+                        class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div id="aboutDropdown" class="dropdown-menu">
+                    <a href="/pages/Who-we-are.html">Why choose 117?</a>
+                    <a href="/pages/Vision.html">Vision & Mission</a>
                 </div>
+            </div> <!-- OUR SERVICES DROPDOWN -->
+            <div class="dropdown-container"> <button class="dropbtn"
+                    onmouseover="toggleDropdown('servicesDropdown', this)"> Our Services <i
+                        class="fa-solid fa-chevron-down"></i> </button>
+                <div id="servicesDropdown" class="dropdown-menu"> <a href="/pages/Security.html">Security</a> <a
+                        href="/pages/office.html">Office Assistant</a> <a href="/pages/House-Keeping.html">House
+                        Keeping</a> </div>
             </div>
-            <br>
-            <br>
-            <div style="display: flex; align-items: center; column-gap:10px; background-color:white; padding: 25px; border-radius: 25px; color: black;">
-                <i class="fa-regular fa-envelopes-bulk"></i>
-                <div>
-                    <p>177@gmail.com</p>
-                </div>
-            </div>
+            <form action="/pages/Galley.html">
+                <button>Gallery</button>
+            </form>
+            <form action="/pages/Our-Clients.html">
+                <button>Our Clients</button>
+            </form>
+            <form action="/Careers.html">
+                <button>Careers</button>
+            </form>
+            <form action="/pages/Contact.html">
+                <button>Contact Us</button>
+            </form>
         </div>
-    </center>
-<div>
-        <button class="btn" style="width: 200px;" onclick="openPopup()">Get in Touch</button>
+        <p class="ui" onclick="openSidebar()"><i class="fa-solid fa-bars"></i></p>
     </div>
+    <div id="sideNavbar" class="side-navbar">
+
+        <span class="close-btn" onclick="closeSidebar()">&times;</span>
+
+        <a href="/">Home</a>
+
+        <!-- ABOUT DROPDOWN -->
+        <button class="side-dropbtn" onclick="toggleSideDropdown('aboutSide')">
+            About Us <i class="fa-solid fa-chevron-down"></i>
+        </button>
+        <div id="aboutSide" class="side-dropdown">
+            <a href="/pages/Who-we-are.html">Why choose 117?</a>
+            <a href="/pages/Vision.html">Vision & Mission</a>
+        </div>
+
+        <!-- SERVICES DROPDOWN -->
+        <button class="side-dropbtn" onclick="toggleSideDropdown('serviceSide')">
+            Our Services <i class="fa-solid fa-chevron-down"></i>
+        </button>
+        <div id="serviceSide" class="side-dropdown">
+            <a href="/pages/Security.html">Security</a>
+            <a href="/pages/office.html">Office Assistant</a>
+            <a href="/pages/House-Keeping.html">House Keeping</a>
+        </div>
+
+        <a href="/pages/Galley.html">Gallery</a>
+        <a href="/pages/Our-Clients.html">Our Clients</a>
+        <a href="/Careers.html">Careers</a>
+        <a href="/pages/Contact.html">Contact Us</a>
     </div>
+
+<!-- CONTACT -->
+<div class="contact-wrap">
+    <div class="info-box">
+        <p><i class="fa fa-map-marker"></i> Chennai, Tamil Nadu</p>
+    </div>
+    <div class="info-box">
+        <p><i class="fa fa-phone"></i> 8124361414</p>
+    </div>
+    <div class="info-box">
+        <p><i class="fa fa-envelope"></i> 117@gmail.com</p>
+    </div>
+    <button class="btn" onclick="openPopup()">Get in Touch</button>
 </div>
-</center>
-<br>
-<div class="Side-bar">
-    <p style="color: black; margin-left: 450px;" onclick="closePopup()"><i class="fa-solid fa-x"></i></p>
-    <br>
-   <div style="display: flex; align-items: center; justify-content: space-between;">
-       <input type="text" placeholder="Your Name" class="inp">
-       <input type="text" placeholder="Company Name" class="inp">
-   </div>
-   <br>
-   <br>
-   <div style="display: flex; align-items: center; justify-content: space-between;">
-      <input type="number" placeholder="Phone number" class="inp">
-      <input type="gmail" placeholder="Gmail" class="inp">
-   </div>
-   <br>
-   <br>
-   <input type="text" placeholder="write your message" class="message">
-   <br>
-   <br>
-   <button class="btn" style="width: 200px;">Submit</button>
-</div> 
-<div class="op"></div>
+
+<!-- POPUP -->
+<div class="overlay" id="overlay" onclick="closePopup()"></div>
+<div class="popup" id="popup">
+    <h3>Contact Form</h3>
+    <input type="text" placeholder="Your Name">
+    <input type="text" placeholder="Company Name">
+    <input type="number" placeholder="Phone">
+    <input type="email" placeholder="Email">
+    <textarea placeholder="Message"></textarea>
+    <button class="btn">Submit</button>
+</div>
+
+<!-- FOOTER -->
 <footer style="background-color: rgba(0,0,0,0.9); padding: 40px 20px; color: #fff; margin-top: 50px;">
-  <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 40px;">
-
-    <!-- Company Info -->
-    <div style="flex: 1; min-width: 200px;">
-      <h3 style="margin: 0 0 10px 0; font-size: 18px;">117 Security Force</h3>
-      <p style="margin: 0; font-size: 14px;">www.117securityforce.com</p>
-      <div style="margin-top: 10px;">
-        <span style="font-size: 14px;">Follow:</span>
-        <i class="fa-brands fa-whatsapp" style="margin-left: 8px;"></i>
-        <i class="fa-brands fa-facebook" style="margin-left: 8px;"></i>
-        <i class="fa-brands fa-instagram" style="margin-left: 8px;"></i>
-      </div>
-    </div>
-
-    <!-- Footer Links -->
-    <div style="flex: 2; min-width: 300px; display: flex; flex-wrap: wrap; gap: 40px;">
-
-      <!-- About Us Dropdown -->
-      <div style="position: relative;">
-        <button class="dropbtn-footer" onclick="toggleFooterDropdown('aboutFooterDropdown', this)">
-               About Us <i class="fa-solid fa-chevron-down"></i>
-        </button>
-
-        <div id="aboutFooterDropdown" class="dropdown-menu-footer" style="display: none; position: absolute; top: 28px; left: 0; background: black; border-radius: 5px; overflow: hidden; min-width: 150px; z-index: 10;">
-          <a href="/pages/Who-we-are.html" style="color: darkgoldenrod; text-decoration: none; display: block; padding: 10px;">Who We Are</a>
-          <a href="/pages/Vision.html" style="color: darkgoldenrod; text-decoration: none; display: block; padding: 10px;">Vision & Mission</a>
-        </div>
-      </div>
-
-      <!-- Our Services Dropdown -->
-      <div style="position: relative;">
-        <button class="dropbtn-footer" onclick="toggleFooterDropdown('servicesFooterDropdown', this)" style="background: none; border: none; color: darkgoldenrod; font-size: 16px; cursor: pointer;">
-          Our Services <i class="fa-solid fa-chevron-down"></i>
-        </button>
-        <div id="servicesFooterDropdown" class="dropdown-menu-footer" style="display: none; position: absolute; top: 28px; left: 0; background: black; border-radius: 5px; overflow: hidden; min-width: 150px; z-index: 10;">
-          <a href="/pages/Security.html" style="color: darkgoldenrod; text-decoration: none; display: block; padding: 10px;">Security</a>
-          <a href="/pages/office.html" style="color: darkgoldenrod; text-decoration: none; display: block; padding: 10px;">Office Assistant</a>
-          <a href="/pages/House-Keeping.html" style="color: darkgoldenrod; text-decoration: none; display: block; padding: 10px;">House Keeping</a>
-        </div>
-      </div>
-
-      <!-- Other Links -->
-      <div>
-        <a href="/pages/Galley.html" style="color: darkgoldenrod; text-decoration: none; display: block; margin-bottom: 8px;">Gallery</a>
-        <a href="#" style="color: darkgoldenrod; text-decoration: none; display: block; margin-bottom: 8px;">Our Clients</a>
-        <a href="#" style="color: darkgoldenrod; text-decoration: none; display: block; margin-bottom: 8px;">Newsletter</a>
-        <a href="/pages/Contact.html" style="color: darkgoldenrod; text-decoration: none; display: block;">Contact Us</a>
-      </div>
-
-    </div>
-  </div>
-
-  <!-- Footer Bottom -->
-  <div style="margin-top: 30px; font-size: 12px; text-align: center; color: darkgoldenrod;">
-    © 2025 All rights reserved | Deeshi Soft Technology Services
-  </div>
-</footer>
-</body>
-</html>
-
+        <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 40px;"> <!-- Company Info -->
+            <div style="flex: 1; min-width: 200px;">
+                <h3 style="margin: 0 0 10px 0; font-size: 18px;">117 Security Force</h3>
+                <p style="margin: 0; font-size: 14px;">www.117securityforce.com</p>
+                <div style="margin-top: 10px;"> <span style="font-size: 14px;">Follow:</span> <i
+                        class="fa-brands fa-whatsapp" style="margin-left: 8px;"></i> <i class="fa-brands fa-facebook"
+                        style="margin-left: 8px;"></i> <i class="fa-brands fa-instagram" style="margin-left: 8px;"></i>
+                </div>
+            </div> <!-- Footer Links -->
+            <div style="flex: 2; min-width: 300px; display: flex; flex-wrap: wrap; gap: 40px;">
+                <!-- About Us Dropdown -->
+                <div style="position: relative;"> <button style="color: white;" class="dropbtn-footer"
+                        onclick="toggleFooterDropdown('aboutFooterDropdown', this)"> About Us <i
+                            class="fa-solid fa-chevron-down"></i> </button>
+                    <div id="aboutFooterDropdown" class="dropdown-menu-footer"
+                        style="display: none; position: absolute; top: 28px; left: 0; background: black; border-radius: 5px; overflow: hidden; min-width: 150px; z-index: 10;">
+                        <a href="/pages/Who-we-are.html"
+                            style="color: white; text-decoration: none; display: block; padding: 10px;">Why choose 117?</a> <a href="/pages/Vision.html"
+                            style="color: white; text-decoration: none; display: block; padding: 10px;">Vision &
+                            Mission</a>
+                    </div>
+                </div> <!-- Our Services Dropdown -->
+                <div style="position: relative;"> <button class="dropbtn-footer"
+                        onclick="toggleFooterDropdown('servicesFooterDropdown', this)"
+                        style="background: none; border: none; color: white; font-size: 16px; cursor: pointer;">
+                        Our Services <i class="fa-solid fa-chevron-down"></i> </button>
+                    <div id="servicesFooterDropdown" class="dropdown-menu-footer"
+                        style="display: none; position: absolute; top: 28px; left: 0; background: black; border-radius: 5px; overflow: hidden; min-width: 150px; z-index: 10;">
+                        <a href="/pages/Security.html"
+                            style="color: white; text-decoration: none; display: block; padding: 10px;">Security</a>
+                        <a href="/pages/office.html"
+                            style="color: white; text-decoration: none; display: block; padding: 10px;">Office
+                            Assistant</a> <a href="/pages/House-Keeping.html"
+                            style="color: white; text-decoration: none; display: block; padding: 10px;">House
+                            Keeping</a>
+                    </div>
+                </div> <!-- Other Links -->
+                <div> <a href="/pages/Galley.html"
+                        style="color: white; text-decoration: none; display: block; margin-bottom: 8px;">Gallery</a>
+                    <a href="#"
+                        style="color: white; text-decoration: none; display: block; margin-bottom: 8px;">Our
+                        Clients</a> <a href="#"
+                        style="color: white; text-decoration: none; display: block; margin-bottom: 8px;">Newsletter</a>
+                    <a href="/pages/Contact.html"
+                        style="color: white; text-decoration: none; display: block;">Contact Us</a>
+                </div>
+            </div>
+            <div>   
+               <p><i class="fa fa-map-marker"></i> 117 Security force
+No 11/25 Abirami Nagar, Thiruverkadu Chennai 600077</p>
+            </div>
+        </div> <!-- Footer Bottom -->
+        <div style="margin-top: 30px; font-size: 12px; text-align: center; color: white;"> © 2025 All rights
+            reserved | Deeshi Soft Technology Services </div>
+    </footer>
 <script>
-    const sidebar = document.querySelector(".Side-bar")
-    const op = document.querySelector(".op")
-    function openPopup(){
-            op.style.opacity = "0.7";
-    op.style.visibility = "visible";
-    sidebar.style.right = "20px";
-
-    }
-    function closePopup(){
-            op.style.opacity = "0";
-    op.style.visibility = "hidden";
-    sidebar.style.right = "-580px";
-
-    }
-    function toggleDropdown(dropdownId, btn) {
-    const dropdown = document.getElementById(dropdownId);
-    const icon = btn.querySelector('i');
-    dropdown.classList.toggle('show');
-    if (dropdown.classList.contains('show')) {
-        icon.classList.replace('fa-chevron-down', 'fa-chevron-up');
-    } else {
-        icon.classList.replace('fa-chevron-up', 'fa-chevron-down');
-    }
+function toggleSide(){
+    document.getElementById("sideNav").classList.toggle("active");
 }
-
-// Close dropdowns when clicking outside
-window.onclick = function(e) {
-    if (!e.target.matches('.dropbtn')) {
-        const dropdowns = document.querySelectorAll('.dropdown-menu');
-        const icons = document.querySelectorAll('.dropbtn i');
-        dropdowns.forEach(dd => dd.classList.remove('show'));
-        icons.forEach(ic => ic.classList.replace('fa-chevron-up', 'fa-chevron-down'));
-    }
+function toggleDropdown(id){
+    document.getElementById(id).classList.toggle("show");
 }
-
-function aiSpeak(text) {
-    if (!text) return;
-    const utterance = new SpeechSynthesisUtterance(text);
-    const voices = speechSynthesis.getVoices();
-    utterance.voice = voices.find(v => v.lang === "en-US") || voices[0];
-    utterance.rate = 1;
-    utterance.pitch = 1;
-    utterance.volume = 1;
-    speechSynthesis.speak(utterance);
+function openPopup(){
+    overlay.style.opacity="0.6";
+    overlay.style.visibility="visible";
+    popup.style.right="20px";
 }
-function toggleFooterDropdown(dropdownId, btn) {
-    const dropdown = document.getElementById(dropdownId);
-    const icon = btn.querySelector('i');
+function closePopup(){
+    overlay.style.opacity="0";
+    overlay.style.visibility="hidden";
+    popup.style.right="-400px";
+}
+function toggleDropdown(dropdownId, btn) {
+            const dropdown = document.getElementById(dropdownId); const icon = btn.querySelector('i'); dropdown.classList.toggle('show'); if (dropdown.classList.contains('show')) { icon.classList.replace('fa-chevron-down', 'fa-chevron-up'); }
+            else { icon.classList.replace('fa-chevron-up', 'fa-chevron-down'); }
+        }
+        // Close dropdowns when clicking outside
+        window.onclick = function (e) { if (!e.target.matches('.dropbtn')) { const dropdowns = document.querySelectorAll('.dropdown-menu'); const icons = document.querySelectorAll('.dropbtn i'); dropdowns.forEach(dd => dd.classList.remove('show')); icons.forEach(ic => ic.classList.replace('fa-chevron-up', 'fa-chevron-down')); } }
+        function aiSpeak(text) { if (!text) return; const utterance = new SpeechSynthesisUtterance(text); const voices = speechSynthesis.getVoices(); utterance.voice = voices.find(v => v.lang === "en-US") || voices[0]; utterance.rate = 1; utterance.pitch = 1; utterance.volume = 1; speechSynthesis.speak(utterance); }
+        // BIG IMAGE SLIDER LEFT → RIGHT 
+        (function () { const slides = document.querySelectorAll(".image-slider .slide"); if (!slides.length) return; let current = 0; setInterval(() => { slides[current].classList.remove("active"); slides[current].classList.add("exit"); current = (current + 1) % slides.length; slides[current].classList.remove("exit"); slides[current].classList.add("active"); }, 2000); })(); // Footer dropdown toggle 
+        function toggleFooterDropdown(dropdownId, btn) {
+            const dropdown = document.getElementById(dropdownId); const icon = btn.querySelector('i'); // Close other footer dropdowns 
+            const allDropdowns = document.querySelectorAll('.dropdown-menu-footer');
+            const allIcons = document.querySelectorAll('.dropbtn-footer i');
+            allDropdowns.forEach(d => { if (d !== dropdown) d.style.display = 'none'; });
+            allIcons.forEach(ic => { if (ic !== icon) ic.classList.replace('fa-chevron-up', 'fa-chevron-down'); }); // Toggle current dropdown
+            if (dropdown.style.display === 'block') { dropdown.style.display = 'none'; icon.classList.replace('fa-chevron-up', 'fa-chevron-down'); } else { dropdown.style.display = 'block'; icon.classList.replace('fa-chevron-down', 'fa-chevron-up'); }
+        } // Close footer dropdowns when clicking outside 
+        window.addEventListener('click', function (e) { if (!e.target.matches('.dropbtn-footer')) { document.querySelectorAll('.dropdown-menu-footer').forEach(dd => dd.style.display = 'none'); document.querySelectorAll('.dropbtn-footer i').forEach(ic => ic.classList.replace('fa-chevron-up', 'fa-chevron-down')); } });
+        function openSidebar() {
+            document.getElementById("sideNavbar").style.left = "0";
+        }
 
-    // Close other footer dropdowns
-    const allDropdowns = document.querySelectorAll('.dropdown-menu-footer');
-    const allIcons = document.querySelectorAll('.dropbtn-footer i');
-    allDropdowns.forEach(d => { if(d !== dropdown) d.style.display = 'none'; });
-    allIcons.forEach(ic => { if(ic !== icon) ic.classList.replace('fa-chevron-up','fa-chevron-down'); });
+        function closeSidebar() {
+            document.getElementById("sideNavbar").style.left = "-260px";
+        }
 
-    // Toggle current dropdown
-    if(dropdown.style.display === 'block') {
-      dropdown.style.display = 'none';
-      icon.classList.replace('fa-chevron-up','fa-chevron-down');
-    } else {
-      dropdown.style.display = 'block';
-      icon.classList.replace('fa-chevron-down','fa-chevron-up');
-    }
-  }
+        function toggleSideDropdown(id) {
+            const dropdown = document.getElementById(id);
+            dropdown.style.display =
+                dropdown.style.display === "block" ? "none" : "block";
+        }
+        const messages = [
 
-  // Close footer dropdowns when clicking outside
-  window.addEventListener('click', function(e){
-    if(!e.target.matches('.dropbtn-footer')) {
-      document.querySelectorAll('.dropdown-menu-footer').forEach(dd => dd.style.display = 'none');
-      document.querySelectorAll('.dropbtn-footer i').forEach(ic => ic.classList.replace('fa-chevron-up','fa-chevron-down'));
+        ];
+        let index = 0;
+        const textElement = document.querySelector('.slide-text');
+        const SpeechRecognition =
+  window.SpeechRecognition || window.webkitSpeechRecognition;
+
+const recognition = new SpeechRecognition();
+recognition.lang = "en-US";
+recognition.continuous = true; // keep listening
+recognition.interimResults = false;
+
+// start automatically when page loads
+window.onload = () => {
+  recognition.start();
+};
+
+recognition.onresult = (event) => {
+  const lastResult = event.results[event.results.length - 1];
+  const text = lastResult[0].transcript.toLowerCase();
+
+  console.log("Heard:", text);
+
+  const blockedWords = ["copycode", "code", "hacking"];
+
+  blockedWords.forEach(word => {
+    if (text.includes(word)) {
+      blankWebsite();
     }
   });
+};
+
+// restart if stopped
+recognition.onend = () => {
+  recognition.start();
+};
+
+function blankWebsite() {
+  document.body.innerHTML = "";
+  document.body.style.background = "white";
+}
 </script>
+
+</body>
+</html>

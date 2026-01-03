@@ -1,53 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Security</title>
-        <!-- Google Fonts -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>117 Security Force</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- Google Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
 <!-- Font Awesome -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-</head>
 <style>
-    /* RESET */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Oswald", sans-serif;
-}
-
-/* BODY */
-body {
-    background-color: darkgoldenrod;
-    color: white;
-    display: flex;
-    flex-direction: column;
-}
-
-/* BUTTONS */
-.btn {
-    padding: 10px 20px;
-    background-color: darkgoldenrod;
-    border: 2px solid black;
-    border-radius: 25px;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.btn:hover {
-    background-color: black;
-    color: white;
-}
+/* RESET */
+* { margin:0; padding:0; box-sizing:border-box; font-family:"Oswald", sans-serif; }
+body { background-color: darkgoldenrod; color:white; }
 
 /* NAVBAR */
 .Navbar {
@@ -59,29 +26,30 @@ body {
     background: rgba(0, 0, 0, 0.7);
     color: white;
     position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
 }
 
-/* LOGO AREA */
-.style {
+.Navbar .style {
     display: flex;
     align-items: center;
     gap: 15px;
 }
 
-.logo {
+.Navbar .style img {
+    width: 60px;
     border-radius: 15px;
 }
 
-/* BUTTON LINKS */
-.button-links {
+.Navbar .button-links {
     display: flex;
     align-items: center;
     gap: 18px;
     flex-wrap: wrap;
 }
 
-/* NAVBAR BUTTONS */
-.button-links button {
+.Navbar .button-links button {
     padding: 8px 14px;
     border-radius: 12px;
     border: none;
@@ -90,17 +58,14 @@ body {
     cursor: pointer;
     transition: all 0.3s ease;
 }
-
-.button-links button:hover {
+.Navbar .button-links button:hover,
+.Navbar .dropbtn:hover {
     background: black;
     color: white;
 }
 
 /* DROPDOWN */
-.dropdown-container {
-    position: relative;
-}
-
+.dropdown-container { position: relative; }
 .dropbtn {
     padding: 8px 14px;
     border-radius: 12px;
@@ -110,364 +75,253 @@ body {
     cursor: pointer;
     transition: all 0.3s ease;
 }
-
-.dropbtn:hover {
-    background: black;
-    color: white;
-}
-
 .dropdown-menu {
     display: none;
     position: absolute;
     top: 45px;
     left: 0;
-    width: 100px;
     background: white;
     border-radius: 10px;
     box-shadow: 0 10px 20px rgba(0,0,0,0.4);
     overflow: hidden;
-    transform: rotateX(-90deg);
-    transform-origin: top;
-    transition: transform 0.4s ease;
+    min-width: 140px;
+    z-index: 1000;
 }
-
-.dropdown-menu.show {
-    display: block;
-    transform: rotateX(0deg);
-}
-
 .dropdown-menu a {
     display: block;
-    padding: 12px;
-    text-decoration: none;
-    color: darkgoldenrod;
-    transition: background 0.3s;
-}
-
-.dropdown-menu a:hover {
-    background: black;
-    color: white;
-}
-
-/* HERO SECTION */
-.hero {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 80px;
-    margin: 40px 20px;
-    flex-wrap: wrap;
-}
-
-.hero img {
-    width: 150px;
-    border: 2px solid black;
-    border-radius: 10px;
-}
-
-.hero-text h1 {
-    font-size: 2rem;
-    margin-bottom: 10px;
-}
-
-.hero-text h3 {
-    width: 300px;
-    font-weight: 400;
-    margin-bottom: 20px;
-    text-align: center;
-}
-
-/* CUBE ANIMATION */
-.cube-container {
-    width: 100px;
-    height: 100px;
-    perspective: 1000px;
-    margin-right: 1100px;
-    margin-top: 280px;
-    position: absolute;
-    top: -40px;
-}
-
-.cube {
-    width: 100px;
-    height: 100px;
-    position: relative;
-    transform-style: preserve-3d;
-    animation: spinCube 5s linear infinite;
-}
-
-.face {
-    position: absolute;
-    width: 50px;
-    height: 50px;
-    background: rgba(0, 0, 0, 0.7);
-    border: 2px solid red;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 25px;
-    font-weight: bold;
-    color: white;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.5);
-}
-.dropbtn-footer {
-    background: none;
-    border: none;
-    color: darkgoldenrod;
-    font-size: 16px;
-    cursor: pointer;
-    padding: 5px 10px;
-    position: relative;
-}
-
-/* Footer Dropdown Menu */
-.dropdown-menu-footer {
-    display: none;
-    position: absolute;
-    background: white; /* White background so links are visible */
-    border-radius: 6px;
-    min-width: 160px;
-    margin-top: 6px;
-    z-index: 999;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-}
-
-/* Show dropdown */
-.dropdown-menu-footer.show {
-    display: block;
-}
-
-/* Links inside dropdown */
-.dropdown-menu-footer a {
-    display: block;
     padding: 10px;
-    color: darkgoldenrod;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-/* Hover effect for links */
-
-
-/* Container must be relative */
-.footer-dropdown-container {
-    position: relative;
-    display: inline-block;
-}
-
-.footer-link {
     text-decoration: none;
     color: darkgoldenrod;
-    font-size: 14px;
-    padding: 8px 12px;
-    background: white;
-    border-radius: 12px;
-    transition: all 0.3s ease;
+}
+.dropdown-menu a:hover { background: black; color:white; }
+
+/* HAMBURGER */
+.Navbar .ui {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
 }
 
-.footer-link:hover {
-    background: black;
-    color: white;
+/* SIDE NAVBAR MOBILE */
+.sideNavbar {
+    position: fixed;
+    top:0; left:-260px;
+    width: 260px; height: 100%;
+    background: rgba(0,0,0,0.95);
+    padding-top: 80px;
+    display: flex; flex-direction: column; gap:10px;
+    transition: 0.3s; overflow-y: auto; z-index: 1001;
 }
+.sideNavbar.active { left:0; }
+.sideNavbar .nav-item {
+    padding:12px 20px; color:white; text-decoration:none; display:flex;
+    justify-content:space-between; align-items:center; cursor:pointer;
+    border-radius:8px; transition:0.3s;
+}
+.sideNavbar .nav-item:hover { background: darkgoldenrod; color:black; }
+.sideNavbar .dropdown-menu-side { display:none; flex-direction:column; padding-left:15px; }
+.sideNavbar .dropdown.show .dropdown-menu-side { display:flex; }
 
-.front  { transform: rotateY(0deg) translateZ(50px); }
-.back   { transform: rotateY(180deg) translateZ(50px); }
-.right  { transform: rotateY(90deg) translateZ(50px); }
-.left   { transform: rotateY(-90deg) translateZ(50px); }
-.top    { transform: rotateX(90deg) translateZ(50px); }
-.bottom { transform: rotateX(-90deg) translateZ(50px); }
+/* HERO */
+.hero {
+    padding:120px 20px 20px 20px;
+    display:flex;
+    flex-wrap:wrap;
+    gap:30px;
+    justify-content:center;
+}
+.hero img { width:200px;  border:2px solid black; border-radius:10px; }
+.hero-text { max-width:500px; }
+.hero-text p { margin-bottom:15px; }
 
-@keyframes spinCube {
-    0%   { transform: rotateX(0deg) rotateY(0deg); }
-    100% { transform: rotateX(360deg) rotateY(360deg); }
+/* BUTTON */
+.btn { padding:10px 20px; border-radius:25px; border:2px solid black; background-color: darkgoldenrod; cursor:pointer; transition:0.3s; }
+.btn:hover { background:black; color:white; }
+
+/* FOOTER */
+footer { background: rgba(0,0,0,0.9); padding:40px 20px; color:#fff; margin-top:50px; }
+footer .footer-container { display:flex; flex-wrap:wrap; justify-content: space-between; gap: 40px; }
+footer h3 { margin-bottom:10px; }
+footer a { color: darkgoldenrod; text-decoration:none; margin-bottom:8px; display:block; }
+footer a:hover { color:white; }
+
+/* RESPONSIVE */
+@media(max-width: 648px){
+    .Navbar .button-links { display:none; }
+    .Navbar .ui { display:block; }
+}
+@media(min-width:1025px){
+    .sideNavbar { display:none; }
+    .hero { justify-content:flex-start; }
+}
+@media(max-width:628px){
+    .hero { flex-direction:column; text-align:center; gap:20px; }
+    .hero img { width:150px; }
+    footer { text-align:center; }
 }
 </style>
-<body bgcolor="darkgoldenrod">
-    <div class="Navbar">
-    <div class="style">
-        <embed src="../images/117 Security Force bage (1).pdf"
-               type="application/pdf"
-               width="90"
-               height="110"
-               class="logo">
-        <h1>117 Security Force</h1>
-    </div>
+</head>
+<body>
 
+<!-- NAVBAR -->
+<div class="Navbar">
+    <div class="style">
+        <img src="../images/logo.jpeg" class="g">
+        <h1 class="u">117 Security Force</h1>
+    </div>
     <div class="button-links">
         <form action="/">
             <button>Home</button>
         </form>
-
-        <!-- ABOUT US DROPDOWN -->
         <div class="dropdown-container">
-            <button class="dropbtn" onmouseover="toggleDropdown('aboutDropdown', this)">
-                About Us <i class="fa-solid fa-chevron-down"></i>
-            </button>
+            <button class="dropbtn" onmouseover="toggleDropdown('aboutDropdown', this)">About Us <i class="fa-solid fa-chevron-down"></i></button>
             <div id="aboutDropdown" class="dropdown-menu">
-                <a href="/pages/Who-we-are.html">Who We Are</a>
+                <a href="/pages/Who-we-are.html">Why choose 117?</a>
                 <a href="/pages/Vision.html">Vision & Mission</a>
             </div>
         </div>
-
-        <!-- OUR SERVICES DROPDOWN -->
         <div class="dropdown-container">
-            <button class="dropbtn" onmouseover="toggleDropdown('servicesDropdown', this)">
-                Our Services <i class="fa-solid fa-chevron-down"></i>
-            </button>
+            <button class="dropbtn" onmouseover="toggleDropdown('servicesDropdown', this)">Our Services <i class="fa-solid fa-chevron-down"></i></button>
             <div id="servicesDropdown" class="dropdown-menu">
                 <a href="/pages/Security.html">Security</a>
                 <a href="/pages/office.html">Office Assistant</a>
                 <a href="/pages/House-Keeping.html">House Keeping</a>
             </div>
         </div>
+        <button onclick="location.href='/pages/Galley.html'">Gallery</button>
+        <button onclick="location.href='/pages/Our-Clients.html'">Our Clients</button>
+        <form action="/Careers.html">
+            <button>Careers</button>
+        </form>
+        <button onclick="location.href='/pages/Contact.html'">Contact Us</button>
+    </div>
+    <p class="ui" onclick="openSidebar()"><i class="fa-solid fa-bars"></i></p>
+</div>
 
-        <form action="/pages/Galley.html">
-            <button>Gallery</button>
-        </form>
-        <button>Our Clients</button>
-        <button>Careers</button>
-        <form action="/pages/Contact.html">
-            <button>Contact Us</button>
-        </form>
+<!-- SIDE NAVBAR -->
+<div class="sideNavbar" id="sideNavbar">
+    <a href="/" class="nav-item">Home</a>
+    <div class="nav-item dropdown">About Us <i class="fa-solid fa-chevron-down"></i>
+        <div class="dropdown-menu-side">
+            <a href="/pages/Who-we-are.html">Why choose 117?</a>
+            <a href="/pages/Vision.html">Vision & Mission</a>
+        </div>
+    </div>
+    <div class="nav-item dropdown">Our Services <i class="fa-solid fa-chevron-down"></i>
+        <div class="dropdown-menu-side">
+            <a href="/pages/Security.html">Security</a>
+            <a href="/pages/office.html">Office Assistant</a>
+            <a href="/pages/House-Keeping.html">House Keeping</a>
+        </div>
+    </div>
+    <a href="/pages/Galley.html" class="nav-item">Gallery</a>
+    <a href="/pages/Our-Clients.html" class="nav-item">Our Clients</a>
+    <a href="/pages/Contact.html" class="nav-item">Contact Us</a>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+    <div>
+        <img src="../images/HK 1.jpg" alt="">
+        <br><br>
+        <img src="../images/HK 2.jpg" alt="">
+        <br><br>
+        <img src="../images/hou.jpg" alt="">
+    </div>
+    <div class="hero-text">
+        <p>We provide reliable, high-quality housekeeping and cleaning services designed to create clean, healthy, and comfortable environments. Our trained staff, attention to detail, and commitment to excellence ensure consistent results every time.</p>
+        <button onclick="aiSpeak(this.previousElementSibling.textContent)" class="btn"><i class="fa-solid fa-microphone"></i></button>
     </div>
 </div>
-<br>
-<br>
-<div style="display: flex; justify-content: center; align-items: center; column-gap: 120px; margin-top: 120px;">
-    <div>
-        <img src="../images/HK 1.jpg" width="200px" height="200px" style="border: black 2px solid;">
-        <br>
-        <br>
-        <img src="../images//HK 1.jpg" width="200px" height="200px" style="border: black 2px solid;">
-        <br>
-        <br>
-        <img src="../images/Hk 2.jpg" width="200px" height="200px" style="border: black 2px solid;">
-    </div>
-    <div>
-        <p style="width: 300px;">We provide reliable, high-quality housekeeping and cleaning services designed to create clean, healthy, and comfortable environments. Our trained staff, attention to detail, and commitment to excellence ensure consistent results every time</p>
-        <br>
-        <button onclick="aiSpeak('We provide reliable, high-quality housekeeping and cleaning services designed to create clean, healthy, and comfortable environments. Our trained staff, attention to detail, and commitment to excellence ensure consistent results every time')" class="btn"><i class="fa-solid fa-microphone"></i></button>  
-    </div>
-</div>
-<br>
-<br>
+
+<!-- FOOTER -->
 <footer style="background-color: rgba(0,0,0,0.9); padding: 40px 20px; color: #fff; margin-top: 50px;">
-  <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 40px;">
+        <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 40px;"> <!-- Company Info -->
+            <div style="flex: 1; min-width: 200px;">
+                <h3 style="margin: 0 0 10px 0; font-size: 18px;">117 Security Force</h3>
+                <p style="margin: 0; font-size: 14px;">www.117securityforce.com</p>
+                <div style="margin-top: 10px;"> <span style="font-size: 14px;">Follow:</span> <i
+                        class="fa-brands fa-whatsapp" style="margin-left: 8px;"></i> <i class="fa-brands fa-facebook"
+                        style="margin-left: 8px;"></i> <i class="fa-brands fa-instagram" style="margin-left: 8px;"></i>
+                </div>
+            </div> <!-- Footer Links -->
+            <div style="flex: 2; min-width: 300px; display: flex; flex-wrap: wrap; gap: 40px;">
+                <!-- About Us Dropdown -->
+                <div style="position: relative;"> <button style="color: white;" class="dropbtn-footer"
+                        onclick="toggleFooterDropdown('aboutFooterDropdown', this)"> About Us <i
+                            class="fa-solid fa-chevron-down"></i> </button>
+                    <div id="aboutFooterDropdown" class="dropdown-menu-footer"
+                        style="display: none; position: absolute; top: 28px; left: 0; background: black; border-radius: 5px; overflow: hidden; min-width: 150px; z-index: 10;">
+                        <a href="/pages/Who-we-are.html"
+                            style="color: white; text-decoration: none; display: block; padding: 10px;">Why choose 117?</a> <a href="/pages/Vision.html"
+                            style="color: white; text-decoration: none; display: block; padding: 10px;">Vision &
+                            Mission</a>
+                    </div>
+                </div> <!-- Our Services Dropdown -->
+                <div style="position: relative;"> <button class="dropbtn-footer"
+                        onclick="toggleFooterDropdown('servicesFooterDropdown', this)"
+                        style="background: none; border: none; color: white; font-size: 16px; cursor: pointer;">
+                        Our Services <i class="fa-solid fa-chevron-down"></i> </button>
+                    <div id="servicesFooterDropdown" class="dropdown-menu-footer"
+                        style="display: none; position: absolute; top: 28px; left: 0; background: black; border-radius: 5px; overflow: hidden; min-width: 150px; z-index: 10;">
+                        <a href="/pages/Security.html"
+                            style="color: white; text-decoration: none; display: block; padding: 10px;">Security</a>
+                        <a href="/pages/office.html"
+                            style="color: white; text-decoration: none; display: block; padding: 10px;">Office
+                            Assistant</a> <a href="/pages/House-Keeping.html"
+                            style="color: white; text-decoration: none; display: block; padding: 10px;">House
+                            Keeping</a>
+                    </div>
+                </div> <!-- Other Links -->
+                <div> <a href="/pages/Galley.html"
+                        style="color: white; text-decoration: none; display: block; margin-bottom: 8px;">Gallery</a>
+                    <a href="#"
+                        style="color: white; text-decoration: none; display: block; margin-bottom: 8px;">Our
+                        Clients</a> <a href="#"
+                        style="color: white; text-decoration: none; display: block; margin-bottom: 8px;">Newsletter</a>
+                    <a href="/pages/Contact.html"
+                        style="color: white; text-decoration: none; display: block;">Contact Us</a>
+                </div>
+            </div>
+            <div>   
+               <p><i class="fa fa-map-marker"></i> 117 Security force
+No 11/25 Abirami Nagar, Thiruverkadu Chennai 600077</p>
+            </div>
+        </div> <!-- Footer Bottom -->
+        <div style="margin-top: 30px; font-size: 12px; text-align: center; color: white;"> © 2025 All rights
+            reserved | Deeshi Soft Technology Services </div>
+    </footer>
+<script>
+// AI speak
+function aiSpeak(text){
+    if(!text) return;
+    const utter = new SpeechSynthesisUtterance(text);
+    utter.voice = speechSynthesis.getVoices().find(v=>v.lang==='en-US') || null;
+    speechSynthesis.speak(utter);
+}
 
-    <!-- Company Info -->
-    <div style="flex: 1; min-width: 200px;">
-      <h3 style="margin: 0 0 10px 0; font-size: 18px;">117 Security Force</h3>
-      <p style="margin: 0; font-size: 14px;">www.117securityforce.com</p>
-      <div style="margin-top: 10px;">
-        <span style="font-size: 14px;">Follow:</span>
-        <i class="fa-brands fa-whatsapp" style="margin-left: 8px;"></i>
-        <i class="fa-brands fa-facebook" style="margin-left: 8px;"></i>
-        <i class="fa-brands fa-instagram" style="margin-left: 8px;"></i>
-      </div>
-    </div>
+// Toggle top navbar dropdowns
+function toggleDropdown(id, btn){
+    const menu = document.getElementById(id);
+    menu.classList.toggle('show');
+}
 
-    <!-- Footer Links -->
-    <div style="flex: 2; min-width: 300px; display: flex; flex-wrap: wrap; gap: 40px;">
+// Toggle footer dropdowns
+function toggleFooterDropdown(id, btn){
+    const menu = document.getElementById(id);
+    menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+}
 
-      <!-- About Us Dropdown -->
-      <div style="position: relative;">
-        <button class="dropbtn-footer" onclick="toggleFooterDropdown('aboutFooterDropdown', this)">
-               About Us <i class="fa-solid fa-chevron-down"></i>
-        </button>
+// Open side navbar on mobile
+function openSidebar(){
+    document.getElementById('sideNavbar').classList.toggle('active');
+}
 
-        <div id="aboutFooterDropdown" class="dropdown-menu-footer" style="display: none; position: absolute; top: 28px; left: 0; background: black; border-radius: 5px; overflow: hidden; min-width: 150px; z-index: 10;">
-          <a href="/pages/Who-we-are.html" style="color: darkgoldenrod; text-decoration: none; display: block; padding: 10px;">Who We Are</a>
-          <a href="/pages/Vision.html" style="color: darkgoldenrod; text-decoration: none; display: block; padding: 10px;">Vision & Mission</a>
-        </div>
-      </div>
+// Side navbar dropdowns
+document.querySelectorAll('.sideNavbar .dropdown').forEach(drop=>{
+    drop.addEventListener('click', ()=> drop.classList.toggle('show'));
+});
+</script>
 
-      <!-- Our Services Dropdown -->
-      <div style="position: relative;">
-        <button class="dropbtn-footer" onclick="toggleFooterDropdown('servicesFooterDropdown', this)" style="background: none; border: none; color: darkgoldenrod; font-size: 16px; cursor: pointer;">
-          Our Services <i class="fa-solid fa-chevron-down"></i>
-        </button>
-        <div id="servicesFooterDropdown" class="dropdown-menu-footer" style="display: none; position: absolute; top: 28px; left: 0; background: black; border-radius: 5px; overflow: hidden; min-width: 150px; z-index: 10;">
-          <a href="/pages/Security.html" style="color: darkgoldenrod; text-decoration: none; display: block; padding: 10px;">Security</a>
-          <a href="/pages/office.html" style="color: darkgoldenrod; text-decoration: none; display: block; padding: 10px;">Office Assistant</a>
-          <a href="/pages/House-Keeping.html" style="color: darkgoldenrod; text-decoration: none; display: block; padding: 10px;">House Keeping</a>
-        </div>
-      </div>
-
-      <!-- Other Links -->
-      <div>
-        <a href="/pages/Galley.html" style="color: darkgoldenrod; text-decoration: none; display: block; margin-bottom: 8px;">Gallery</a>
-        <a href="#" style="color: darkgoldenrod; text-decoration: none; display: block; margin-bottom: 8px;">Our Clients</a>
-        <a href="#" style="color: darkgoldenrod; text-decoration: none; display: block; margin-bottom: 8px;">Newsletter</a>
-        <a href="/pages/Contact.html" style="color: darkgoldenrod; text-decoration: none; display: block;">Contact Us</a>
-      </div>
-
-    </div>
-  </div>
-
-  <!-- Footer Bottom -->
-  <div style="margin-top: 30px; font-size: 12px; text-align: center; color: darkgoldenrod;">
-    © 2025 All rights reserved | Deeshi Soft Technology Services
-  </div>
-</footer>
 </body>
 </html>
-
-<script>
-    function aiSpeak(text) {
-    if (!text) return;
-    const utterance = new SpeechSynthesisUtterance(text);
-    const voices = speechSynthesis.getVoices();
-    utterance.voice = voices.find(v => v.lang === "en-US") || voices[0];
-    utterance.rate = 1;
-    utterance.pitch = 1;
-    utterance.volume = 1;
-    speechSynthesis.speak(utterance);
-}
-    function toggleDropdown(dropdownId, btn) {
-    const dropdown = document.getElementById(dropdownId);
-    const icon = btn.querySelector('i');
-    dropdown.classList.toggle('show');
-    if (dropdown.classList.contains('show')) {
-        icon.classList.replace('fa-chevron-down', 'fa-chevron-up');
-    } else {
-        icon.classList.replace('fa-chevron-up', 'fa-chevron-down');
-    }
-}
-
-// Close dropdowns when clicking outside
-window.onclick = function(e) {
-    if (!e.target.matches('.dropbtn')) {
-        const dropdowns = document.querySelectorAll('.dropdown-menu');
-        const icons = document.querySelectorAll('.dropbtn i');
-        dropdowns.forEach(dd => dd.classList.remove('show'));
-        icons.forEach(ic => ic.classList.replace('fa-chevron-up', 'fa-chevron-down'));
-    }
-}
-function toggleFooterDropdown(dropdownId, btn) {
-    const dropdown = document.getElementById(dropdownId);
-    const icon = btn.querySelector('i');
-
-    // Close other footer dropdowns
-    const allDropdowns = document.querySelectorAll('.dropdown-menu-footer');
-    const allIcons = document.querySelectorAll('.dropbtn-footer i');
-    allDropdowns.forEach(d => { if(d !== dropdown) d.style.display = 'none'; });
-    allIcons.forEach(ic => { if(ic !== icon) ic.classList.replace('fa-chevron-up','fa-chevron-down'); });
-
-    // Toggle current dropdown
-    if(dropdown.style.display === 'block') {
-      dropdown.style.display = 'none';
-      icon.classList.replace('fa-chevron-up','fa-chevron-down');
-    } else {
-      dropdown.style.display = 'block';
-      icon.classList.replace('fa-chevron-down','fa-chevron-up');
-    }
-  }
-
-  // Close footer dropdowns when clicking outside
-  window.addEventListener('click', function(e){
-    if(!e.target.matches('.dropbtn-footer')) {
-      document.querySelectorAll('.dropdown-menu-footer').forEach(dd => dd.style.display = 'none');
-      document.querySelectorAll('.dropbtn-footer i').forEach(ic => ic.classList.replace('fa-chevron-up','fa-chevron-down'));
-    }
-  });
-</script>
