@@ -295,15 +295,13 @@ body {
 /* Sidebar */
 .sidebar {
     height: 100%;
-    width: 0;
+    width: 100%;
     position: fixed;
     top: 0;
-    left: 0;
-    background-color: rgba(0,0,0,0.95);
-    overflow-x: hidden;
+    left: -60%;
+    background-color: black;
     transition: 0.3s;
     padding-top: 60px;
-    z-index: 1050;
 }
 
 /* Links inside sidebar */
@@ -567,11 +565,11 @@ window.addEventListener('click', function(e){
 });
 
     function openSidebar() {
-        document.getElementById("sidebar").style.left = "0";
+        document.getElementById("sidebar").style.left = "0%";
     }
 
     function closeSidebar() {
-        document.getElementById("sidebar").style.left = "-260px";
+        document.getElementById("sidebar").style.left = "-60%";
     }
 
 
