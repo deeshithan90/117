@@ -13,6 +13,9 @@
         rel="stylesheet"> <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <style>
+        html {
+            scroll-behavior: smooth;
+        }
         /* RESET */
         * {
             margin: 0;
@@ -30,7 +33,13 @@
             padding-top: 160px;
             /* Fix for fixed navbar */
         }
+h1{
+    color: black;
+}
 
+.gi{
+    display: none;
+}
         .l {
             font-family: "Oswald", sans-serif;
         }
@@ -46,6 +55,66 @@
         }
 
         .btn:hover {
+            background-color: black;
+            color: white;
+        }
+
+        .btns{
+            padding: 10px 20px;
+            background-color: darkgoldenrod;
+            border: 2px solid black;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: 0.3s;
+            display: none;
+        }
+
+        .btns:hover{
+            background-color: black;
+            color: white;
+        }
+
+        .btns-2{
+            padding: 10px 20px;
+            background-color: darkgoldenrod;
+            border: 2px solid black;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: 0.3s;
+            display: block;
+        }
+
+        .btns-7{
+            padding: 10px 20px;
+            background-color: darkgoldenrod;
+            border: 2px solid black;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: 0.3s;
+            display: block;
+        }
+
+        .btns-7:hover{
+            background-color: black;
+            color: white;
+        }
+
+        .btns-8{
+            padding: 10px 20px;
+            background-color: darkgoldenrod;
+            border: 2px solid black;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: 0.3s;
+            display: block;
+        }
+
+        .btns-8:hover{
+            background-color: black;
+            color: white;
+        }
+
+        .btns-2:hover{
             background-color: black;
             color: white;
         }
@@ -118,6 +187,14 @@
         .dropbtn:hover {
             background: black;
             color: white;
+        }
+
+        .c{
+            display: none;
+        }
+
+        .btns-7{
+            display: none;
         }
 
         .dropdown-menu {
@@ -251,7 +328,7 @@
         /* ===== BIG IMAGE SLIDER LEFT → RIGHT ===== */
         .image-slider {
             position: relative;
-            width: 600px;
+            width: 500px;
             height: 300px;
             overflow: hidden;
             margin-top: 40px;
@@ -694,6 +771,12 @@
             .ui {
                 display: block;
             }
+            .giu{
+                width: 300px;
+            }
+        }
+        .bs{
+            display: none;
         }
     </style>
 </head>
@@ -702,7 +785,7 @@
     <div class="Navbar">
         <div class="style">
             <img src="./images/logo.jpeg" class="g">
-            <h1 class="u">117 Security Force</h1>
+            <h1 class="u" style="color: darkgoldenrod">117 Security Force</h1>
         </div>
         <div class="button-links">
             <button>Home</button> <!-- ABOUT US DROPDOWN -->
@@ -711,25 +794,24 @@
                         class="fa-solid fa-chevron-down"></i>
                 </button>
                 <div id="aboutDropdown" class="dropdown-menu">
-                    <a href="/pages/Who-we-are.html">Why choose 117?</a>
+                    <a href="#id">Our Team</a>
+                    <a href="/pages/Who-we-are.html">Why 117?</a>
                     <a href="/pages/Vision.html">Vision & Mission</a>
                 </div>
             </div> <!-- OUR SERVICES DROPDOWN -->
             <div class="dropdown-container"> <button class="dropbtn"
                     onmouseover="toggleDropdown('servicesDropdown', this)"> Our Services <i
                         class="fa-solid fa-chevron-down"></i> </button>
-                <div id="servicesDropdown" class="dropdown-menu"> <a href="/pages/Security.html">Security</a> <a
-                        href="/pages/office.html">Office Assistant</a> <a href="/pages/House-Keeping.html">House
-                        Keeping</a> </div>
+                <div id="servicesDropdown" class="dropdown-menu">
+                    <a href="#topic" onclick="hightLate()">Our security</a>
+                    <a href="/pages/Security.html">other services</a>
+                </div>
             </div>
             <form action="/pages/Galley.html">
                 <button>Gallery</button>
             </form>
             <form action="/pages/Our-Clients.html">
                 <button>Our Clients</button>
-            </form>
-            <form action="./Careers.html">
-                <button>Careers</button>
             </form>
             <form action="/pages/Contact.html">
                 <button>Contact Us</button>
@@ -748,8 +830,9 @@
             About Us <i class="fa-solid fa-chevron-down"></i>
         </button>
         <div id="aboutSide" class="side-dropdown">
-            <a href="/pages/Who-we-are.html">Why choose 117?</a>
+            <a href="/pages/Who-we-are.html">Why  117?</a>
             <a href="/pages/Vision.html">Vision & Mission</a>
+            <a href="#id">Our Team</a>
         </div>
 
         <!-- SERVICES DROPDOWN -->
@@ -757,14 +840,12 @@
             Our Services <i class="fa-solid fa-chevron-down"></i>
         </button>
         <div id="serviceSide" class="side-dropdown">
-            <a href="/pages/Security.html">Security</a>
-            <a href="/pages/office.html">Office Assistant</a>
-            <a href="/pages/House-Keeping.html">House Keeping</a>
+            <a href="#topic">Our Security</a>
+            <a href="/pages/Security.html">Other services</a>
         </div>
 
         <a href="/pages/Galley.html">Gallery</a>
         <a href="./pages/Our-Clients.html">Our Clients</a>
-        <a href="./Careers.html">Careers</a>
         <a href="/pages/Contact.html">Contact Us</a>
     </div>
     <div>
@@ -774,28 +855,29 @@
         <br>
         <div class="slidering">
             <div class="slider-track">
-                <img src="./images-2/image (1).jpeg">
-                <img src="./images-2/image (2).jpeg">
-                <img src="./images-2/image (3).jpeg">
-                <img src="./images-2/image (4).jpeg">
-                <img src="./images-2/image (5).jpeg">
-                <img src="./images-2/image (6).jpeg">
-                <img src="./images-2/image (13).jpeg" />
+                <img src="./images-2/oc%201.jpeg">
+                <img src="./images-2/oc%202.jpeg">
+                <img src="./images-2/oc%203.jpeg">
+                <img src="./images-2/oc%204.jpeg">
+                <img src="./images-2/oc%205.jpeg">
+                <img src="./images-2/oc%206.jpeg">
+                <img src="./images-2/oc%207.jpeg" />
 
                 <!-- duplicate for smooth infinite loop -->
-                <img src="./images-2/image (7).jpeg">
-                <img src="./images-2/image (8).jpeg">
-                <img src="./images-2/image (9).jpeg">
-                <img src="./images-2/image (10).jpeg">
-                <img src="./images-2/image (11).jpeg">
-                <img src="./images-2/image (12).jpeg">
-                <img src="./images-2/image (14).jpeg">
+                <img src="./images-2/oc%208.jpeg">
+                <img src="./images-2/oc%209.jpeg">
+                <img src="./images-2/oc%2010.jpeg">
+                <img src="./images-2/oc%2011.jpeg">
+                <img src="./images-2/oc%2012.jpeg">
+                <img src="./images-2/oc%2013.jpeg">
+                <img src="./images-2/oc%2014.jpeg">
             </div>
         </div>
 
     </div>
     <br>
     <div class="hero">
+        <img src="./images/logo.jpeg" style="width:200px; border-radius: 500px"/>
         <div class="hero-text">
             <h1 class="u">"Your Safety, Our Priority"</h1>
             <h3>Providing professional security solutions tailored to protect your people, property, and peace of mind.
@@ -813,35 +895,41 @@
         </div>
     </div> <!-- BIG IMAGE SLIDER -->
     <center>
-        <div class="image-slider"> 
-               <img src="./images/oa1.jpg" class="slide active"> 
-               <img src="./images/oa2.jpg" class="slide"> 
-                <img src="./images/1 (1).jpeg" class="slide"> 
-                <img src="./images/1 (2).jpeg" class="slide"> 
-                <img src="./images/1 (3).jpeg" class="slide"> 
-                <img src="./images/1 (4).jpeg" class="slide"> 
-                <img src="./images/1(5).jpeg" class="slide"> 
+        <div class="image-slider" id="id">
+               <img src="./images/oa1.jpg" class="slide active">
+               <img src="./images/oa2.jpg" class="slide">
+                <img src="./images/1 (1).jpeg" class="slide">
+                <img src="./images/1 (2).jpeg" class="slide">
+                <img src="./images/1 (3).jpeg" class="slide">
+                <img src="./images/1 (4).jpeg" class="slide">
+                <img src="./images/1(5).jpeg" class="slide">
                 <img src="./images/security78.jpeg" class="slide">
             </div>
     </center> <br> <br>
-    <h1>About my Team</h1>
+    <h1 >About my Team</h1>
     <br>
-    <div style="display: flex; align-items: center; justify-content: space-around; ">
+    <div  style="display: flex; align-items: center; justify-content: space-around; ">
         <div>
-            <p style="width: 550px; margin-top: -180px;">
+            <p style="width: 550px;">
                 Our Security Team is a highly trained group of licensed professionals committed to protecting people,
                 property, and assets with integrity and vigilance. Each team member undergoes rigorous screening,
                 continuous training, and performance evaluations to ensure the highest standards of safety and
                 professionalism.
-
+            </p>
+            <p class="c"  style="width: 550px; display: none">
                 We specialize in risk prevention, access control, incident response, and customer-focused security
                 solutions. Our team operates with discipline, discretion, and respect, ensuring a secure environment
-                while maintaining a professional and approachable presence.             
-            </p> <br> <button class="btn">
+                while maintaining a professional and approachable presence.
+            </p>
+            <br>
+            <button class="btns-2" onclick="redMore()">
                 Read
                 More</button>
+            <button class="btns" onclick="redLess()">
+                Read
+                Less</button>
         </div>
-        <div> <img src="./images/about-security.jpeg" width="300px" > </div>
+        <div> <img src="./images/sec%20team.webp" width="600px" class="giu" > </div>
     </div> <bR> <br>
     <h1>Our Facilities</h1> <br>
     <div class="main-s">
@@ -862,13 +950,13 @@
     <div class="Our-Strengths">
         <div class="row">
             <div style="width: 200px;"> <img src="./images/Customer.jpg" width="100px" /> <br>
-                <p>Customer Relstionship Managmant</p>
+                <p>Customer Relationship Management</p>
             </div>
             <div style="width: 200px;"> <img src="./images/s.png" width="100px"> <br>
-                <p>Expericed and Dedicatedd staff</p>
+                <p>Experienced  and Dedicated staff</p>
             </div>
             <div style="width: 200px;"> <img src="./images/tick.jpg" width="100px"> <br>
-                <p>Quality cheks by Hightly Specialized Team</p>
+                <p>Quality cheks by Highly Specialized Team</p>
             </div>
         </div> <br> <br>
         <div class="row">
@@ -879,48 +967,52 @@
                 <p>Round The clock supports</p>
             </div>
             <div style="width: 200px;"> <img src="./images/patrolling.jpg" width="100px"> <br>
-                <p>patrolling services 12hours</p>
+                <p>patrolling services 24hours</p>
             </div>
         </div>
     </div> <br> <br> <br>
     <h1>Our Security</h1> <br> <br>
-    <div class="Our Security">
-        <div class="row">
-            <div class="i" style="background-color: white; padding: 25px; width: 250px; border-radius: 25px;">
-                <h3>Hotel security</h3> 
+    <div class="Our Security" id="topic">
+        <div class="row b">
+            <div class="is" style="background-color: white; padding: 25px; width: 280px; border-radius: 25px;">
+                <h3 style="color: black">Corporate office</h3>
                 <img
-                 src="./images/hotel.webp" width="200px" height="200px" /> <br>
-                <p style="width: 250px; font-weight: bold;">Our hotel security approach balances safety and hospitality. We focus on prevention, visible presence, and quick response—while maintaining a welcoming atmosphere that enhances guest confidence without disrupting their experience</p>
+                 src="./images/corporate%20sec.jpg" width="200px" height="200px" /> <br>
+                <p style="width: 250px; font-weight: bold;">At 117 security Force, the safety and security of our employees, visitors, and assets is a top priority. Our corporate office employs state-of-the-art security systems and protocols to ensure a safe and secure working environment.</p>
             </div>
-            <div class="i" style="background-color: white; padding: 25px; width: 250px; border-radius: 25px;">
-                <h3>School security</h3>
+            <div class="i" style="background-color: white; padding: 25px; width: 280px; border-radius: 25px;">
+                <h3 style="color: black">School</h3>
                  <img
-                    src="./images/school.webp" width="200px" height="200px" /> <br>
-                <center>
-                    <p style="width: 250px; font-weight: bold;">We combine vigilance, training, and communication to create a secure school environment. Our approach emphasizes prevention, rapid response, and collaboration with school staff while maintaining a welcoming atmosphere for students</p>
-                </center>
+                    src="./images/school%20sec%201.jpg" width="200px" height="200px" /> <br>
+                    <p style="width: 250px; font-weight: bold;">We combine vigilance, training, and communication to create a secure school environment. Our approach emphasizes prevention, rapid response, and collaboration with school staff while maintaining a welcoming atmosphere for students.</p>
             </div>
-            <div class="i" style="background-color: white; padding: 25px; border-radius: 25px; width: 250px;">
-                <h3>Hospital Security</h3> 
+            <div class="i" style="background-color: white; padding: 25px; border-radius: 25px; width: 280px;">
+                <h3 style="color: black">Hospital</h3>
                 <img
-                  src="./images/hosipital.webp" width="200px" height="200px" /> <br>
+                  src="./images/hospital%20sec.jpg" width="200px" height="220px" /> <br>
                 <p style="width: 250px; font-weight: bold;">Our approach balances vigilance and care. We prevent incidents before they occur, respond quickly when needed, and maintain a professional presence that ensures the safety and comfort of patients and staff.</p>
             </div>
-            <div class="i" style="background-color: white; padding: 25px; border-radius: 25px; width: 250px;">
-                <h3>Gated community</h3>
-                <img src="./images/gated.webp" width="200px" height="200px" /> <br>
-                <p style="width: 250px; font-weight: bold;">Our approach balances vigilance and community comfort. We prevent unauthorized access, respond quickly to incidents, and maintain a visible but friendly presence, ensuring residents feel safe without compromising the welcoming atmosphere of the community.</p>
+            <div class="i" style="background-color: white; padding: 25px; border-radius: 25px; width: 280px;">
+                <h3 style="color: black">Gated community</h3>
+                <br>
+                <img src="./images/gated%20sec.jpg" width="200px" height="200px" /> <br>
+                <p style="width: 250px; font-weight: bold;">We
+                    prevent unauthorized access, respond quickly to incidents, and maintain a visible but friendly presence, ensuring residents feel safe without compromising the welcoming atmosphere of the community.</p>
             </div>
         </div>
     </div> <br> <br>
     <div class="white-s">
         <h1>Who we are?</h1> <br> <br>
-        <div style="display: flex; align-items: center; justify-content: space-around;">
-            <div style="display: flex; align-items: center; column-gap: 10px;">
-                <p style="width: 600px;">At "117 securityForce" we believe security is about trust, reliability, and presence. We partner with our clients to understand their unique security challenges and deliver customized solutions that truly protect what matters most.
-
-                              Our trained security officers operate with professionalism, respect, and attention to detail, ensuring a safe and secure environment for everyone we serve. We are a professional security services provider committed to safeguarding people, property, and assets with integrity, discipline, and excellence. Our organization is built on a foundation of trust, operational expertise, and a deep understanding of modern security challenges. With a team of highly trained and experienced security personnel, we deliver reliable protection solutions tailored to the unique needs of our clients. Our guards are carefully selected, thoroughly vetted, and continuously trained to ensure the highest standards of professionalism, alertness, and ethical conduct. We serve a wide range of sectors including residential communities, commercial properties, corporate offices, industrial facilities, events, and institutions. By combining skilled manpower, proven procedures, and a proactive approach to risk management, we ensure a safe and secure environment at all times. At the core of our operations is a commitment to client satisfaction, rapid response, and continuous improvement. We do not simply provide security—we build long-term partnerships based on confidence, reliability, and results</p> 
+        <div style="display: flex; align-items: center; justify-content: space-around">
+            <div>
+                <p class="giu" style="width: 400px;">At "117 securityForce" we believe security is about trust, reliability, and presence. We partner with our clients to understand their unique security challenges and deliver customized solutions that truly protect what matters most.
+                    Our trained security officers operate with professionalism, respect, and attention to detail, ensuring a safe and secure environment for everyone we serve. We are a professional security services provider committed to safeguarding people, property, and assets with integrity, discipline, and excellence. Our organization is built on a foundation of trust, operational expertise, and a deep understanding of modern security challenges. With a team of highly trained and experienced security personnel, we deliver reliable protection solutions tailored to the unique needs of our clients. Our guards are carefully selected, thoroughly vetted, and continuously trained to ensure the highest standards of professionalism, alertness, and ethical conduct.</p>
+                <p class="gi" style="width: 400px;">
+                    We serve a wide range of sectors including residential communities, commercial properties, corporate offices, industrial facilities, events, and institutions. By combining skilled manpower, proven procedures, and a proactive approach to risk management, we ensure a safe and secure environment at all times. At the core of our operations is a commitment to client satisfaction, rapid response, and continuous improvement. We do not simply provide security—we build long-term partnerships based on confidence, reliability, and results We provide trained and uniformed security personnel for residential, commercial, industrial, and institutional premises. Our guards are professionally trained in access control, regular patrols, incident reporting, emergency response, and customer handling. We ensure safety, discipline, and reliability at all times.
+                </p>
                 <br>
+                <button  class="btns-8" onclick="ReadMore2()">Read More</button>
+                <button class="btns-7" onclick="ReadLess2()">Read Less</button>
             </div>
              <img src="./images/security78.jpeg" width="300px">
         </div>
@@ -929,14 +1021,14 @@
         <center>
             <h2>Call-us</h2>
             <p>To know more about our services & pricing</p>
-            <h3>(9+)8124361414</h3>
+            <h3>(91+)8124361414</h3>
         </center>
     </div> <br> <br> <br> <!-- TEAM SECTION -->
     <div style="display: flex; align-items: center; justify-content: space-around; margin-top: 50px; flex-wrap: wrap;">
-        <div class="flip-card" style="width: 300px; height: 300px;">
+        <div class="flip-card" style="width: 250px; height: 250px;">
             <div class="flip-card-inner">
                 <div class="flip-card-front"> <img src="./images/IMG-20251228-WA0003.jpg" alt="Mr.Dhanabal"
-                        style="width:100%; height:100%; border:2px solid black;"> </div>
+                        style="width:90%; height:90%; border:2px solid black;"> </div>
                 <div class="flip-card-back">
                     <p style="padding: 10px; font-size: 16px;"> Mr.Dhanabal (Ex. Police Officer) Director of 117
                         Security force. During his service period he attended Assam war. His paramilitary training
@@ -946,11 +1038,11 @@
         </div>
         <br>
         <br>
-        <div class="flip-card" style="width: 300px; height: 300px;">
+        <div class="flip-card" style="width: 250px; height: 250px;">
             <div class="flip-card-inner">
                 <div class="flip-card-front">
                     <img src="./images/IMG-20251228-WA0001.jpg" alt="Mr.Murugan"
-                        style="width:100%; height:100%; border:2px solid black;">
+                        style="width:90%; height:90%; border:2px solid black;">
                 </div>
                 <div class="flip-card-back">
                     <p style="padding: 10px; font-size: 16px;"> Mr.Murugan, Managing Director of 117 Security Force,
@@ -960,63 +1052,47 @@
             </div>
         </div>
     </div> <!-- FOOTER -->
-    <footer style="background-color: rgba(0,0,0,0.9); padding: 40px 20px; color: #fff; margin-top: 50px;">
-        <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 40px;"> <!-- Company Info -->
-            <div style="flex: 1; min-width: 200px;">
-                <h3 style="margin: 0 0 10px 0; font-size: 18px;">117 Security Force</h3>
-                <p style="margin: 0; font-size: 14px;">www.117securityforce.com</p>
-                <div style="margin-top: 10px;"> <span style="font-size: 14px;">Follow:</span> <i
-                        class="fa-brands fa-whatsapp" style="margin-left: 8px;"></i> <i class="fa-brands fa-facebook"
-                        style="margin-left: 8px;"></i> <i class="fa-brands fa-instagram" style="margin-left: 8px;"></i>
-                </div>
-            </div> <!-- Footer Links -->
-            <div style="flex: 2; min-width: 300px; display: flex; flex-wrap: wrap; gap: 40px;">
-                <!-- About Us Dropdown -->
-                <div style="position: relative;"> <button style="color: white;" class="dropbtn-footer"
-                        onclick="toggleFooterDropdown('aboutFooterDropdown', this)"> About Us <i
-                            class="fa-solid fa-chevron-down"></i> </button>
-                    <div id="aboutFooterDropdown" class="dropdown-menu-footer"
-                        style="display: none; position: absolute; top: 28px; left: 0; background: black; border-radius: 5px; overflow: hidden; min-width: 150px; z-index: 10;">
-                        <a href="/pages/Who-we-are.html"
-                            style="color: white; text-decoration: none; display: block; padding: 10px;">Why choose 117?</a> <a href="/pages/Vision.html"
-                            style="color: white; text-decoration: none; display: block; padding: 10px;">Vision &
-                            Mission</a>
-                    </div>
-                </div> <!-- Our Services Dropdown -->
-                <div style="position: relative;"> <button class="dropbtn-footer"
-                        onclick="toggleFooterDropdown('servicesFooterDropdown', this)"
-                        style="background: none; border: none; color: white; font-size: 16px; cursor: pointer;">
-                        Our Services <i class="fa-solid fa-chevron-down"></i> </button>
-                    <div id="servicesFooterDropdown" class="dropdown-menu-footer"
-                        style="display: none; position: absolute; top: 28px; left: 0; background: black; border-radius: 5px; overflow: hidden; min-width: 150px; z-index: 10;">
-                        <a href="/pages/Security.html"
-                            style="color: white; text-decoration: none; display: block; padding: 10px;">Security</a>
-                        <a href="/pages/office.html"
-                            style="color: white; text-decoration: none; display: block; padding: 10px;">Office
-                            Assistant</a> <a href="/pages/House-Keeping.html"
-                            style="color: white; text-decoration: none; display: block; padding: 10px;">House
-                            Keeping</a>
-                    </div>
-                </div> <!-- Other Links -->
-                <div> <a href="/pages/Galley.html"
-                        style="color: white; text-decoration: none; display: block; margin-bottom: 8px;">Gallery</a>
-                    <a href="#"
-                        style="color: white; text-decoration: none; display: block; margin-bottom: 8px;">Our
-                        Clients</a> <a href="#"
-                        style="color: white; text-decoration: none; display: block; margin-bottom: 8px;">Newsletter</a>
-                    <a href="/pages/Contact.html"
-                        style="color: white; text-decoration: none; display: block;">Contact Us</a>
-                </div>
-            </div>
-            <div>   
-               <p><i class="fa fa-map-marker"></i> 117 Security force
-No 11/25 Abirami Nagar, Thiruverkadu Chennai 600077</p>
-            </div>
-        </div> <!-- Footer Bottom -->
-        <div style="margin-top: 30px; font-size: 12px; text-align: center; color: white;"> © 2025 All rights
-            reserved | Deeshi Soft Technology Services </div>
-    </footer>
+<footer style="background-color: rgba(0,0,0,0.9); padding: 40px 20px; color: #fff; margin-top: 50px;">
+    <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 40px;">
+        <p style="color: darkgoldenrod">117 security force, No 11/25 Abirami Nagar, Thiruverkadu, Chennai 600077.   ph:8124361414.  mail: 117@gmail.com.  website:www.117securityforce.com</p>
+    </div>
+    <!-- Footer Bottom -->
+    <div style="margin-top: 30px; font-size: 12px; text-align: center; color: white;"> © 2025 All rights
+        reserved | Deeshi Soft Technology Services </div>
+</footer>
     <script>
+        var c = document.querySelector(".c")
+        var btn = document.querySelector(".btns-2")
+        var btns = document.querySelector(".btns")
+        var is = document.querySelector(".is")
+        var b = document.querySelector(".b")
+        var i = document.querySelector(".btns-8")
+        var bs = document.querySelector(".btns-7")
+        var gi = document.querySelector(".gi")
+        function redMore(){
+            c.style.display = "block"
+            btn.style.display = "none"
+            btns.style.display = "block"
+        }
+        function redLess(){
+            c.style.display = "none"
+            btn.style.display = "block"
+            btns.style.display = "none"
+        }
+        function hightLate(){
+            b.style.background = "black"
+            b.style.padding = "30px"
+        }
+        function  ReadMore2(){
+            gi.style.display = "block"
+            i.style.display = "none"
+            bs.style.display = "block"
+        }
+        function ReadLess2(){
+            gi.style.display = "none"
+            i.style.display = "block"
+            bs.style.display = "none"
+        }
         function toggleDropdown(dropdownId, btn) {
             const dropdown = document.getElementById(dropdownId); const icon = btn.querySelector('i'); dropdown.classList.toggle('show'); if (dropdown.classList.contains('show')) { icon.classList.replace('fa-chevron-down', 'fa-chevron-up'); }
             else { icon.classList.replace('fa-chevron-up', 'fa-chevron-down'); }
@@ -1024,16 +1100,16 @@ No 11/25 Abirami Nagar, Thiruverkadu Chennai 600077</p>
         // Close dropdowns when clicking outside
         window.onclick = function (e) { if (!e.target.matches('.dropbtn')) { const dropdowns = document.querySelectorAll('.dropdown-menu'); const icons = document.querySelectorAll('.dropbtn i'); dropdowns.forEach(dd => dd.classList.remove('show')); icons.forEach(ic => ic.classList.replace('fa-chevron-up', 'fa-chevron-down')); } }
         function aiSpeak(text) { if (!text) return; const utterance = new SpeechSynthesisUtterance(text); const voices = speechSynthesis.getVoices(); utterance.voice = voices.find(v => v.lang === "en-US") || voices[0]; utterance.rate = 1; utterance.pitch = 1; utterance.volume = 1; speechSynthesis.speak(utterance); }
-        // BIG IMAGE SLIDER LEFT → RIGHT 
-        (function () { const slides = document.querySelectorAll(".image-slider .slide"); if (!slides.length) return; let current = 0; setInterval(() => { slides[current].classList.remove("active"); slides[current].classList.add("exit"); current = (current + 1) % slides.length; slides[current].classList.remove("exit"); slides[current].classList.add("active"); }, 2000); })(); // Footer dropdown toggle 
+        // BIG IMAGE SLIDER LEFT → RIGHT
+        (function () { const slides = document.querySelectorAll(".image-slider .slide"); if (!slides.length) return; let current = 0; setInterval(() => { slides[current].classList.remove("active"); slides[current].classList.add("exit"); current = (current + 1) % slides.length; slides[current].classList.remove("exit"); slides[current].classList.add("active"); }, 2000); })(); // Footer dropdown toggle
         function toggleFooterDropdown(dropdownId, btn) {
-            const dropdown = document.getElementById(dropdownId); const icon = btn.querySelector('i'); // Close other footer dropdowns 
+            const dropdown = document.getElementById(dropdownId); const icon = btn.querySelector('i'); // Close other footer dropdowns
             const allDropdowns = document.querySelectorAll('.dropdown-menu-footer');
             const allIcons = document.querySelectorAll('.dropbtn-footer i');
             allDropdowns.forEach(d => { if (d !== dropdown) d.style.display = 'none'; });
             allIcons.forEach(ic => { if (ic !== icon) ic.classList.replace('fa-chevron-up', 'fa-chevron-down'); }); // Toggle current dropdown
             if (dropdown.style.display === 'block') { dropdown.style.display = 'none'; icon.classList.replace('fa-chevron-up', 'fa-chevron-down'); } else { dropdown.style.display = 'block'; icon.classList.replace('fa-chevron-down', 'fa-chevron-up'); }
-        } // Close footer dropdowns when clicking outside 
+        } // Close footer dropdowns when clicking outside
         window.addEventListener('click', function (e) { if (!e.target.matches('.dropbtn-footer')) { document.querySelectorAll('.dropdown-menu-footer').forEach(dd => dd.style.display = 'none'); document.querySelectorAll('.dropbtn-footer i').forEach(ic => ic.classList.replace('fa-chevron-up', 'fa-chevron-down')); } });
         function openSidebar() {
             document.getElementById("sideNavbar").style.left = "0";
@@ -1093,4 +1169,4 @@ function blankWebsite() {
     </script>
 </body>
 
-</html
+</html>
