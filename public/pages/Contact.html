@@ -852,46 +852,44 @@ footer{
 <body>
 
 <!-- SIDE NAVBAR -->
- <div class="Navbar">
-        <div class="style">
-            <img src="../images/logo.jpeg" class="g">
-            <h1 class="u">117 Security Force</h1>
-        </div>
-        <div class="button-links">
-            <form action="/">
-                <button>Home</button>
-            </form> <!-- ABOUT US DROPDOWN -->
-            <div class="dropdown-container">
-                <button class="dropbtn" onmouseover="toggleDropdown('aboutDropdown', this)"> About Us <i
-                        class="fa-solid fa-chevron-down"></i>
-                </button>
-                <div id="aboutDropdown" class="dropdown-menu">
-                    <a href="/pages/Who-we-are.html">Why choose 117?</a>
-                    <a href="/pages/Vision.html">Vision & Mission</a>
-                </div>
-            </div> <!-- OUR SERVICES DROPDOWN -->
-            <div class="dropdown-container"> <button class="dropbtn"
-                    onmouseover="toggleDropdown('servicesDropdown', this)"> Our Services <i
-                        class="fa-solid fa-chevron-down"></i> </button>
-                <div id="servicesDropdown" class="dropdown-menu"> <a href="/pages/Security.html">Security</a> <a
-                        href="/pages/office.html">Office Assistant</a> <a href="/pages/House-Keeping.html">House
-                        Keeping</a> </div>
-            </div>
-            <form action="/pages/Galley.html">
-                <button>Gallery</button>
-            </form>
-            <form action="/pages/Our-Clients.html">
-                <button>Our Clients</button>
-            </form>
-            <form action="/Careers.html">
-                <button>Careers</button>
-            </form>
-            <form action="/pages/Contact.html">
-                <button>Contact Us</button>
-            </form>
-        </div>
-        <p class="ui" onclick="openSidebar()"><i class="fa-solid fa-bars"></i></p>
+<div class="Navbar">
+    <div class="style">
+        <img src="../images/logo.jpeg" class="g">
+        <h1 class="u" style="color: darkgoldenrod">117 Security Force</h1>
     </div>
+    <div class="button-links">
+        <form action="/">
+            <button>Home</button>
+        </form>
+            <!-- ABOUT US DROPDOWN -->
+        <div class="dropdown-container">
+            <button class="dropbtn" onmouseover="toggleDropdown('aboutDropdown', this)"> About Us <i
+                    class="fa-solid fa-chevron-down"></i>
+            </button>
+            <div id="aboutDropdown" class="dropdown-menu">
+                <a href="/pages/Who-we-are.html">Why 117?</a>
+                <a href="/pages/Vision.html">Vision & Mission</a>
+            </div>
+        </div> <!-- OUR SERVICES DROPDOWN -->
+        <div class="dropdown-container"> <button class="dropbtn"
+                                                 onmouseover="toggleDropdown('servicesDropdown', this)"> Our Services <i
+                class="fa-solid fa-chevron-down"></i> </button>
+            <div id="servicesDropdown" class="dropdown-menu">
+                <a href="/pages/Security.html">Other services</a>
+            </div>
+        </div>
+        <form action="/pages/Galley.html">
+            <button>Gallery</button>
+        </form>
+        <form action="/pages/Our-Clients.html">
+            <button>Our Clients</button>
+        </form>
+        <form action="/pages/Contact.html">
+            <button>Contact Us</button>
+        </form>
+    </div>
+    <p class="ui" onclick="openSidebar()"><i class="fa-solid fa-bars"></i></p>
+</div>
     <div id="sideNavbar" class="side-navbar">
 
         <span class="close-btn" onclick="closeSidebar()">&times;</span>
@@ -903,7 +901,7 @@ footer{
             About Us <i class="fa-solid fa-chevron-down"></i>
         </button>
         <div id="aboutSide" class="side-dropdown">
-            <a href="/pages/Who-we-are.html">Why choose 117?</a>
+            <a href="/pages/Who-we-are.html">Why 117?</a>
             <a href="/pages/Vision.html">Vision & Mission</a>
         </div>
 
@@ -912,27 +910,24 @@ footer{
             Our Services <i class="fa-solid fa-chevron-down"></i>
         </button>
         <div id="serviceSide" class="side-dropdown">
-            <a href="/pages/Security.html">Security</a>
-            <a href="/pages/office.html">Office Assistant</a>
-            <a href="/pages/House-Keeping.html">House Keeping</a>
+            <a href="/pages/Security.html">Other services</a>
         </div>
 
         <a href="/pages/Galley.html">Gallery</a>
         <a href="/pages/Our-Clients.html">Our Clients</a>
-        <a href="/Careers.html">Careers</a>
         <a href="/pages/Contact.html">Contact Us</a>
     </div>
 
 <!-- CONTACT -->
 <div class="contact-wrap">
     <div class="info-box">
-        <p><i class="fa fa-map-marker"></i> Chennai, Tamil Nadu</p>
+        <p><i class="fa fa-map-marker"></i> Thiruverkadu Chennai 600077.</p>
     </div>
     <div class="info-box">
         <p><i class="fa fa-phone"></i> 8124361414</p>
     </div>
     <div class="info-box">
-        <p><i class="fa fa-envelope"></i> 117@gmail.com</p>
+        <p><i class="fa-solid fa-globe"></i> www.117securityforce.com</p>
     </div>
     <button class="btn" onclick="openPopup()">Get in Touch</button>
 </div>
@@ -951,61 +946,14 @@ footer{
 
 <!-- FOOTER -->
 <footer style="background-color: rgba(0,0,0,0.9); padding: 40px 20px; color: #fff; margin-top: 50px;">
-        <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 40px;"> <!-- Company Info -->
-            <div style="flex: 1; min-width: 200px;">
-                <h3 style="margin: 0 0 10px 0; font-size: 18px;">117 Security Force</h3>
-                <p style="margin: 0; font-size: 14px;">www.117securityforce.com</p>
-                <div style="margin-top: 10px;"> <span style="font-size: 14px;">Follow:</span> <i
-                        class="fa-brands fa-whatsapp" style="margin-left: 8px;"></i> <i class="fa-brands fa-facebook"
-                        style="margin-left: 8px;"></i> <i class="fa-brands fa-instagram" style="margin-left: 8px;"></i>
-                </div>
-            </div> <!-- Footer Links -->
-            <div style="flex: 2; min-width: 300px; display: flex; flex-wrap: wrap; gap: 40px;">
-                <!-- About Us Dropdown -->
-                <div style="position: relative;"> <button style="color: white;" class="dropbtn-footer"
-                        onclick="toggleFooterDropdown('aboutFooterDropdown', this)"> About Us <i
-                            class="fa-solid fa-chevron-down"></i> </button>
-                    <div id="aboutFooterDropdown" class="dropdown-menu-footer"
-                        style="display: none; position: absolute; top: 28px; left: 0; background: black; border-radius: 5px; overflow: hidden; min-width: 150px; z-index: 10;">
-                        <a href="/pages/Who-we-are.html"
-                            style="color: white; text-decoration: none; display: block; padding: 10px;">Why choose 117?</a> <a href="/pages/Vision.html"
-                            style="color: white; text-decoration: none; display: block; padding: 10px;">Vision &
-                            Mission</a>
-                    </div>
-                </div> <!-- Our Services Dropdown -->
-                <div style="position: relative;"> <button class="dropbtn-footer"
-                        onclick="toggleFooterDropdown('servicesFooterDropdown', this)"
-                        style="background: none; border: none; color: white; font-size: 16px; cursor: pointer;">
-                        Our Services <i class="fa-solid fa-chevron-down"></i> </button>
-                    <div id="servicesFooterDropdown" class="dropdown-menu-footer"
-                        style="display: none; position: absolute; top: 28px; left: 0; background: black; border-radius: 5px; overflow: hidden; min-width: 150px; z-index: 10;">
-                        <a href="/pages/Security.html"
-                            style="color: white; text-decoration: none; display: block; padding: 10px;">Security</a>
-                        <a href="/pages/office.html"
-                            style="color: white; text-decoration: none; display: block; padding: 10px;">Office
-                            Assistant</a> <a href="/pages/House-Keeping.html"
-                            style="color: white; text-decoration: none; display: block; padding: 10px;">House
-                            Keeping</a>
-                    </div>
-                </div> <!-- Other Links -->
-                <div> <a href="/pages/Galley.html"
-                        style="color: white; text-decoration: none; display: block; margin-bottom: 8px;">Gallery</a>
-                    <a href="#"
-                        style="color: white; text-decoration: none; display: block; margin-bottom: 8px;">Our
-                        Clients</a> <a href="#"
-                        style="color: white; text-decoration: none; display: block; margin-bottom: 8px;">Newsletter</a>
-                    <a href="/pages/Contact.html"
-                        style="color: white; text-decoration: none; display: block;">Contact Us</a>
-                </div>
-            </div>
-            <div>   
-               <p><i class="fa fa-map-marker"></i> 117 Security force
-No 11/25 Abirami Nagar, Thiruverkadu Chennai 600077</p>
-            </div>
-        </div> <!-- Footer Bottom -->
-        <div style="margin-top: 30px; font-size: 12px; text-align: center; color: white;"> © 2025 All rights
-            reserved | Deeshi Soft Technology Services </div>
-    </footer>
+    <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 40px;">
+        <p style="color: darkgoldenrod">117 security force, No 11/25 Abirami Nagar, Thiruverkadu, Chennai 600077.   ph:8124361414.  mail: 117@gmail.com.  website:www.117securityforce.com</p>
+    </div>
+    <!-- Footer Bottom -->
+    <div style="margin-top: 30px; font-size: 12px; text-align: center; color: white;"> © 2025 All rights
+        reserved | Deeshi Soft Technology Services </div>
+</footer>
+
 <script>
 function toggleSide(){
     document.getElementById("sideNav").classList.toggle("active");

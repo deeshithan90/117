@@ -25,8 +25,8 @@
 
 /* BODY */
 body {
-    background-color: darkgoldenrod;
-    color: white;
+    background-color: white;
+    color: black;
     display: flex;
     flex-direction: column;
 }
@@ -381,58 +381,42 @@ body {
 </style>
 </head>
 <body bgcolor="darkgoldenrod">
-    <div class="Navbar">
+<div class="Navbar">
     <div class="style">
-        <img src="../images/logo.jpeg" class="g"/>
-        <h1>117 Security Force</h1>
+        <img src="../images/logo.jpeg" class="g">
+        <h1 class="u" style="color: darkgoldenrod">117 Security Force</h1>
     </div>
-
     <div class="button-links">
         <form action="/">
             <button>Home</button>
-        </form>
-
-        <!-- ABOUT US DROPDOWN -->
+        </form> <!-- ABOUT US DROPDOWN -->
         <div class="dropdown-container">
-            <button class="dropbtn" onmouseover="toggleDropdown('aboutDropdown', this)">
-                About Us <i class="fa-solid fa-chevron-down"></i>
+            <button class="dropbtn" onmouseover="toggleDropdown('aboutDropdown', this)"> About Us <i
+                    class="fa-solid fa-chevron-down"></i>
             </button>
             <div id="aboutDropdown" class="dropdown-menu">
-                <a href="/pages/Who-we-are.html">Why choose 117?</a>
+                <a href="/pages/Who-we-are.html">Why 117?</a>
                 <a href="/pages/Vision.html">Vision & Mission</a>
             </div>
-        </div>
-
-        <!-- OUR SERVICES DROPDOWN -->
-        <div class="dropdown-container">
-            <button class="dropbtn" onmouseover="toggleDropdown('servicesDropdown', this)">
-                Our Services <i class="fa-solid fa-chevron-down"></i>
-            </button>
+        </div> <!-- OUR SERVICES DROPDOWN -->
+        <div class="dropdown-container"> <button class="dropbtn"
+                                                 onmouseover="toggleDropdown('servicesDropdown', this)"> Our Services <i
+                class="fa-solid fa-chevron-down"></i> </button>
             <div id="servicesDropdown" class="dropdown-menu">
-                <a href="/pages/Security.html">Security</a>
-                <a href="/pages//office.html">Office Assistant</a>
-                <a href="/pages//House-Keeping.html">House Keeping</a>
+                <a href="/pages/Security.html">Other services</a>
             </div>
         </div>
-
         <form action="/pages/Galley.html">
             <button>Gallery</button>
         </form>
         <form action="/pages/Our-Clients.html">
-                <button>Our Clients</button>
-            </form>
-        <form action="/Careers.html">
-            <button>Careers</button>
+            <button>Our Clients</button>
         </form>
         <form action="/pages/Contact.html">
             <button>Contact Us</button>
         </form>
     </div>
-    <!-- Hamburger icon -->
-<button class="hamburger" onclick="toggleSidebar()">
-  <i class="fa fa-bars"></i>
-</button>
-
+    <p class="ui" onclick="openSidebar()"><i class="fa-solid fa-bars"></i></p>
 </div>
 
 <!-- Sidebar -->
@@ -443,7 +427,7 @@ body {
     <div class="sidebar-dropdown">
         <button onclick="toggleSidebarDropdown('sidebarAbout')" class="sidebar-dropbtn">About Us <i class="fa fa-chevron-down"></i></button>
         <div id="sidebarAbout" class="sidebar-dropdown-content">
-            <a href="/pages/Who-we-are.html">Why choose 117?</a>
+            <a href="/pages/Who-we-are.html">Why 117?</a>
             <a href="/pages/Vision.html">Vision & Mission</a>
         </div>
     </div>
@@ -452,15 +436,12 @@ body {
     <div class="sidebar-dropdown">
         <button onclick="toggleSidebarDropdown('sidebarServices')" class="sidebar-dropbtn">Our Services <i class="fa fa-chevron-down"></i></button>
         <div id="sidebarServices" class="sidebar-dropdown-content">
-            <a href="/pages/Security.html">Security</a>
-            <a href="/pages/office.html">Office Assistant</a>
-            <a href="/pages/House-Keeping.html">House Keeping</a>
+            <a href="/pages/Security.html">Other services</a>
         </div>
     </div>
 
     <a href="/pages/Galley.html" class="sidebar-link">Gallery</a>
     <a href="/pages/Our-Clients.html" class="sidebar-link">Our Clients</a>
-    <a href="/Careers.html" class="sidebar-link">Careers</a>
     <a href="/pages/Contact.html" class="sidebar-link">Contact Us</a>
 </div>
 
@@ -479,69 +460,20 @@ body {
   <br>
   <br>
   <div style="display: flex; align-items: center; justify-content: space-around;">
-     <img src="../images//1(5).jpeg" width="200px" height="200px" style="border: black 2px solid;">
+     <img src="../images/1(5).jpeg" width="200px" height="200px" style="border: black 2px solid;">
      <img src="../images/security.jpeg" width="200px" height="200px" style="border: black 2px solid;">
      <img src="../images/security78.jpeg" width="200px" height="200px" style="border: black 2px solid;">
      <img src="../images/security79.jpeg" width="200px" height="200px" style="border: black 2px solid;">
   </div>
 </div>
-
 <footer style="background-color: rgba(0,0,0,0.9); padding: 40px 20px; color: #fff; margin-top: 50px;">
-        <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 40px;"> <!-- Company Info -->
-            <div style="flex: 1; min-width: 200px;">
-                <h3 style="margin: 0 0 10px 0; font-size: 18px;">117 Security Force</h3>
-                <p style="margin: 0; font-size: 14px;">www.117securityforce.com</p>
-                <div style="margin-top: 10px;"> <span style="font-size: 14px;">Follow:</span> <i
-                        class="fa-brands fa-whatsapp" style="margin-left: 8px;"></i> <i class="fa-brands fa-facebook"
-                        style="margin-left: 8px;"></i> <i class="fa-brands fa-instagram" style="margin-left: 8px;"></i>
-                </div>
-            </div> <!-- Footer Links -->
-            <div style="flex: 2; min-width: 300px; display: flex; flex-wrap: wrap; gap: 40px;">
-                <!-- About Us Dropdown -->
-                <div style="position: relative;"> <button style="color: white;" class="dropbtn-footer"
-                        onclick="toggleFooterDropdown('aboutFooterDropdown', this)"> About Us <i
-                            class="fa-solid fa-chevron-down"></i> </button>
-                    <div id="aboutFooterDropdown" class="dropdown-menu-footer"
-                        style="display: none; position: absolute; top: 28px; left: 0; background: black; border-radius: 5px; overflow: hidden; min-width: 150px; z-index: 10;">
-                        <a href="/pages/Who-we-are.html"
-                            style="color: white; text-decoration: none; display: block; padding: 10px;">Why choose 117?</a> <a href="/pages/Vision.html"
-                            style="color: white; text-decoration: none; display: block; padding: 10px;">Vision &
-                            Mission</a>
-                    </div>
-                </div> <!-- Our Services Dropdown -->
-                <div style="position: relative;"> <button class="dropbtn-footer"
-                        onclick="toggleFooterDropdown('servicesFooterDropdown', this)"
-                        style="background: none; border: none; color: white; font-size: 16px; cursor: pointer;">
-                        Our Services <i class="fa-solid fa-chevron-down"></i> </button>
-                    <div id="servicesFooterDropdown" class="dropdown-menu-footer"
-                        style="display: none; position: absolute; top: 28px; left: 0; background: black; border-radius: 5px; overflow: hidden; min-width: 150px; z-index: 10;">
-                        <a href="/pages/Security.html"
-                            style="color: white; text-decoration: none; display: block; padding: 10px;">Security</a>
-                        <a href="/pages/office.html"
-                            style="color: white; text-decoration: none; display: block; padding: 10px;">Office
-                            Assistant</a> <a href="/pages/House-Keeping.html"
-                            style="color: white; text-decoration: none; display: block; padding: 10px;">House
-                            Keeping</a>
-                    </div>
-                </div> <!-- Other Links -->
-                <div> <a href="/pages/Galley.html"
-                        style="color: white; text-decoration: none; display: block; margin-bottom: 8px;">Gallery</a>
-                    <a href="#"
-                        style="color: white; text-decoration: none; display: block; margin-bottom: 8px;">Our
-                        Clients</a> <a href="#"
-                        style="color: white; text-decoration: none; display: block; margin-bottom: 8px;">Newsletter</a>
-                    <a href="/pages/Contact.html"
-                        style="color: white; text-decoration: none; display: block;">Contact Us</a>
-                </div>
-            </div>
-            <div>   
-               <p><i class="fa fa-map-marker"></i> 117 Security force
-No 11/25 Abirami Nagar, Thiruverkadu Chennai 600077</p>
-            </div>
-        </div> <!-- Footer Bottom -->
-        <div style="margin-top: 30px; font-size: 12px; text-align: center; color: white;"> © 2025 All rights
-            reserved | Deeshi Soft Technology Services </div>
-    </footer>
+    <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 40px;">
+        <p style="color: darkgoldenrod">117 security force, No 11/25 Abirami Nagar, Thiruverkadu, Chennai 600077.   ph:8124361414.  mail: 117@gmail.com.  website:www.117securityforce.com</p>
+    </div>
+    <!-- Footer Bottom -->
+    <div style="margin-top: 30px; font-size: 12px; text-align: center; color: white;"> © 2025 All rights
+        reserved | Deeshi Soft Technology Services </div>
+</footer>
 </body>
 </html>
 
@@ -609,14 +541,7 @@ const hamburger = document.querySelector('.hamburger');
 const sidebar = document.getElementById('sidebar');
 
 // Toggle sidebar
-hamburger.addEventListener('click', function(e){
-    e.stopPropagation(); // Prevent window click from closing sidebar
-    if (sidebar.style.width === '250px') {
-        sidebar.style.width = '0';
-    } else {
-        sidebar.style.width = '250px';
-    }
-});
+
 
 // Toggle sidebar dropdowns
 function toggleSidebarDropdown(dropdownId) {
@@ -640,6 +565,15 @@ window.addEventListener('click', function(e){
         sidebar.style.width = '0';
     }
 });
+
+    function openSidebar() {
+        document.getElementById("sidebar").style.left = "0";
+    }
+
+    function closeSidebar() {
+        document.getElementById("sidebar").style.left = "-260px";
+    }
+
 
 
 </script>

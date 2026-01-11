@@ -17,8 +17,8 @@
 }
 
 body {
-    background-color: darkgoldenrod;
-    color: white;
+    background-color: white;
+    color: black;
     padding-top: 120px;
 }
 
@@ -144,9 +144,9 @@ body {
 .main-content {
     display: flex;
     justify-content: center;
-    gap: 120px;
     margin-top: 40px;
     flex-wrap: wrap;
+    column-gap: 100px;
 }
 
 .main-content img {
@@ -236,6 +236,70 @@ footer .dropdown-menu-footer a {
         left: 50% !important;
         transform: translateX(-50%);
     }
+
+    .f-1{
+        width: 200px;
+    }
+    .f-2{
+        width: 200px;
+    }
+    .f-3{
+        width: 200px;
+    }
+    .f-4{
+        width: 250px;
+    }
+    .f-5{
+        width: 300px;
+    }
+}
+
+.btn-l{
+    padding: 20px;
+}
+.btn-l button{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    background: goldenrod;
+    color: black;
+    font-weight: bold;
+    border: none;
+    margin: 4px;
+    border: none;
+    border-radius: 25px;
+    width: 300px;
+    transition: 1s;
+}
+.btn-l button:hover{
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+    margin-left: -50px;
+}
+.f-1{
+    display: none;
+    font-weight: bold;
+    color: black;
+}
+.f-2{
+    display: none;
+    font-weight: bold;
+    color: black;
+}
+.f-3{
+    display: none;
+    font-weight: bold;
+    color: black;
+}
+.f-4{
+    display: none;
+    font-weight: bold;
+    color: black;
+}
+.f-5{
+    display: none;
+    font-weight: bold;
+    color: black;
 }
 </style>
 </head>
@@ -246,31 +310,37 @@ footer .dropdown-menu-footer a {
 <div class="Navbar">
     <div class="style">
         <img src="../images/logo.jpeg" class="g">
-        <h1 class="u">117 Security Force</h1>
+        <h1 class="u" style="color: darkgoldenrod">117 Security Force</h1>
     </div>
     <div class="button-links">
-        <button>Home</button>
+        <form action="/">
+            <button>Home</button>
+        </form> <!-- ABOUT US DROPDOWN -->
         <div class="dropdown-container">
-            <button class="dropbtn" onmouseover="toggleDropdown('aboutDropdown', this)"> About Us <i class="fa-solid fa-chevron-down"></i></button>
+            <button class="dropbtn" onmouseover="toggleDropdown('aboutDropdown', this)"> About Us <i
+                    class="fa-solid fa-chevron-down"></i>
+            </button>
             <div id="aboutDropdown" class="dropdown-menu">
-                <a href="/pages/Who-we-are.html">Why choose 117?</a>
+                <a href="/pages/Who-we-are.html">Why 117?</a>
                 <a href="/pages/Vision.html">Vision & Mission</a>
             </div>
-        </div>
-        <div class="dropdown-container">
-            <button class="dropbtn" onmouseover="toggleDropdown('servicesDropdown', this)"> Our Services <i class="fa-solid fa-chevron-down"></i></button>
+        </div> <!-- OUR SERVICES DROPDOWN -->
+        <div class="dropdown-container"> <button class="dropbtn"
+                                                 onmouseover="toggleDropdown('servicesDropdown', this)"> Our Services <i
+                class="fa-solid fa-chevron-down"></i> </button>
             <div id="servicesDropdown" class="dropdown-menu">
-                <a href="/pages/Security.html">Security</a>
-                <a href="/pages/office.html">Office Assistant</a>
-                <a href="/pages/House-Keeping.html">House Keeping</a>
+                <a href="/pages/Security.html">Other services</a>
             </div>
         </div>
-        <form action="/pages/Galley.html"><button>Gallery</button></form>
-        <form action="/pages/Our-Clients.html"><button>Our Clients</button></form>
-        <form action="/Careers.html">
-            <button>Careers</button>
+        <form action="/pages/Galley.html">
+            <button>Gallery</button>
         </form>
-        <form action="/pages/Contact.html"><button>Contact Us</button></form>
+        <form action="/pages/Our-Clients.html">
+            <button>Our Clients</button>
+        </form>
+        <form action="/pages/Contact.html">
+            <button>Contact Us</button>
+        </form>
     </div>
     <p class="ui" onclick="openSidebar()"><i class="fa-solid fa-bars"></i></p>
 </div>
@@ -281,14 +351,12 @@ footer .dropdown-menu-footer a {
     <a href="/">Home</a>
     <button class="side-dropbtn" onclick="toggleSide('sideAbout')">About Us</button>
     <div id="sideAbout" class="side-dropdown">
-        <a href="/pages/Who-we-are.html">Why choose 117?</a>
+        <a href="/pages/Who-we-are.html">Why  117?</a>
         <a href="/pages/Vision.html">Vision & Mission</a>
     </div>
     <button class="side-dropbtn" onclick="toggleSide('sideService')">Our Services</button>
     <div id="sideService" class="side-dropdown">
-        <a href="/pages/Security.html">Security</a>
-        <a href="/pages/office.html">Office Assistant</a>
-        <a href="/pages/House-Keeping.html">House Keeping</a>
+        <a href="/pages/Security.html">Other services</a>
     </div>
     <a href="/pages/Galley.html">Gallery</a>
     <a href="/pages/Our-Clients.html">Our Clients</a>
@@ -297,85 +365,109 @@ footer .dropdown-menu-footer a {
 </div>
 
 <!-- CONTENT -->
+<br>
+<h1>Other services</h1>
 <div class="main-content">
-    <div>
-        <img src="../images/security.jpeg"><br><br>
-        <img src="../images/security78.jpeg"><br><br>
-        <img src="../images/security79.jpeg">
+    <div class="btn-l">
+        <button onclick="fisrt1()">Investigation</button>
+        <br>
+        <br>
+        <button onclick="fisrt2()">Dog squad service</button>
+        <br>
+        <br>
+        <button onclick="fisrt3()">Mobile Patrolling</button>
+        <br>
+        <br>
+        <button onclick="fisrt4()">Body guards</button>
+        <br>
+        <br>
+        <button onclick="fisrt5()">Facility Management</button>
     </div>
-    <div style="max-width:300px;">
-        <p>
-            We provide trained and uniformed security personnel for residential,
-            commercial, industrial, and institutional premises. Our guards are
-            professionally trained in access control, regular patrols,
-            incident reporting, emergency response, and customer handling.
-            We ensure safety, discipline, and reliability at all times.
-        </p><br>
-        <button class="btn" onclick="aiSpeak(`We provide trained and uniformed security personnel for residential, commercial, industrial, and institutional premises. Our guards are professionally trained in access control, regular patrols, incident reporting, emergency response, and customer handling. We ensure safety, discipline, and reliability at all times.`)">
-            <i class="fa-solid fa-microphone"></i>
-        </button>
+    <div class="j" style="width: 500px; height: 400px; border:white 2px solid">
+        <p class="f-1">
+            The investigation reports of "117SF" are unbaised and independent without compromising on confidentially.We provide comprehensive investigative solutions that protect your assets and reputation.
+            <br>
+            <img src="../images/logo.jpeg" class="logo" style="border-radius: 500px; width: 100px"/>
+        </p>
+        <p class="f-2">
+           "117 SF" Guarding service has been provided quality "Dog squad Services" by a qualified veterinary doctor.Our dogs are trained in several techniques.
+            <br>
+            <img src="../images/logo.jpeg" class="logo" style="border-radius: 500px; width: 100px"/>
+        </p>
+        <p class="f-3">
+            All your problems are being attended without any time delay by our field officers on regular basis.Seniour officers of our company will visit and inspect units periodically and supervise the performance of the security personnel.
+            <br>
+            <img src="../images/logo.jpeg" class="logo" style="border-radius: 500px; width: 100px"/>
+        </p>
+        <p class="f-4">
+            Security body guards are trained professionals responsible for protecting individuals from potential threats, including physical attacks, harassment, kidnapping, or unwanted attention. They play a crucial role in ensuring the safety, privacy, and confidence of their clients in both public and private environments.
+            <br>
+            <img src="../images/logo.jpeg" class="logo" style="border-radius: 500px; width: 100px"/>
+        </p>
+        <div class="f-5">
+            <h4 style="color: goldenrod; text-decoration: underline">Office Assistant</h4>
+            117 Office Assistant plays a vital role in ensuring the smooth day-to-day operation of an office. They provide administrative and clerical support, helping staff stay organized, efficient, and focused on their core responsibilities.
+            <br>
+            <h4 style="color: goldenrod; text-decoration: underline">HouseKeeping</h4>
+            117 provide reliable, high-quality housekeeping and cleaning services designed to create clean, healthy, and comfortable environments. Our trained staff, attention to detail, and commitment to excellence ensure consistent results every time.
+            <br>
+           <img src="../images/logo.jpeg" class="logo" style="border-radius: 500px; width: 100px"/>
+        </div>
     </div>
-</div>
+    </div>
 
 <!-- FOOTER -->
 <footer style="background-color: rgba(0,0,0,0.9); padding: 40px 20px; color: #fff; margin-top: 50px;">
-        <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 40px;"> <!-- Company Info -->
-            <div style="flex: 1; min-width: 200px;">
-                <h3 style="margin: 0 0 10px 0; font-size: 18px;">117 Security Force</h3>
-                <p style="margin: 0; font-size: 14px;">www.117securityforce.com</p>
-                <div style="margin-top: 10px;"> <span style="font-size: 14px;">Follow:</span> <i
-                        class="fa-brands fa-whatsapp" style="margin-left: 8px;"></i> <i class="fa-brands fa-facebook"
-                        style="margin-left: 8px;"></i> <i class="fa-brands fa-instagram" style="margin-left: 8px;"></i>
-                </div>
-            </div> <!-- Footer Links -->
-            <div style="flex: 2; min-width: 300px; display: flex; flex-wrap: wrap; gap: 40px;">
-                <!-- About Us Dropdown -->
-                <div style="position: relative;"> <button style="color: white;" class="dropbtn-footer"
-                        onclick="toggleFooterDropdown('aboutFooterDropdown', this)"> About Us <i
-                            class="fa-solid fa-chevron-down"></i> </button>
-                    <div id="aboutFooterDropdown" class="dropdown-menu-footer"
-                        style="display: none; position: absolute; top: 28px; left: 0; background: black; border-radius: 5px; overflow: hidden; min-width: 150px; z-index: 10;">
-                        <a href="/pages/Who-we-are.html"
-                            style="color: white; text-decoration: none; display: block; padding: 10px;">Why choose 117?</a> <a href="/pages/Vision.html"
-                            style="color: white; text-decoration: none; display: block; padding: 10px;">Vision &
-                            Mission</a>
-                    </div>
-                </div> <!-- Our Services Dropdown -->
-                <div style="position: relative;"> <button class="dropbtn-footer"
-                        onclick="toggleFooterDropdown('servicesFooterDropdown', this)"
-                        style="background: none; border: none; color: white; font-size: 16px; cursor: pointer;">
-                        Our Services <i class="fa-solid fa-chevron-down"></i> </button>
-                    <div id="servicesFooterDropdown" class="dropdown-menu-footer"
-                        style="display: none; position: absolute; top: 28px; left: 0; background: black; border-radius: 5px; overflow: hidden; min-width: 150px; z-index: 10;">
-                        <a href="/pages/Security.html"
-                            style="color: white; text-decoration: none; display: block; padding: 10px;">Security</a>
-                        <a href="/pages/office.html"
-                            style="color: white; text-decoration: none; display: block; padding: 10px;">Office
-                            Assistant</a> <a href="/pages/House-Keeping.html"
-                            style="color: white; text-decoration: none; display: block; padding: 10px;">House
-                            Keeping</a>
-                    </div>
-                </div> <!-- Other Links -->
-                <div> <a href="/pages/Galley.html"
-                        style="color: white; text-decoration: none; display: block; margin-bottom: 8px;">Gallery</a>
-                    <a href="#"
-                        style="color: white; text-decoration: none; display: block; margin-bottom: 8px;">Our
-                        Clients</a> <a href="#"
-                        style="color: white; text-decoration: none; display: block; margin-bottom: 8px;">Newsletter</a>
-                    <a href="/pages/Contact.html"
-                        style="color: white; text-decoration: none; display: block;">Contact Us</a>
-                </div>
-            </div>
-            <div>   
-               <p><i class="fa fa-map-marker"></i> 117 Security force
-No 11/25 Abirami Nagar, Thiruverkadu Chennai 600077</p>
-            </div>
-        </div> <!-- Footer Bottom -->
-        <div style="margin-top: 30px; font-size: 12px; text-align: center; color: white;"> © 2025 All rights
-            reserved | Deeshi Soft Technology Services </div>
-    </footer>
-
+    <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 40px;">
+        <p style="color: darkgoldenrod">117 security force, No 11/25 Abirami Nagar, Thiruverkadu, Chennai 600077.   ph:8124361414.  mail: 117@gmail.com.  website:www.117securityforce.com</p>
+    </div>
+    <!-- Footer Bottom -->
+    <div style="margin-top: 30px; font-size: 12px; text-align: center; color: white;"> © 2025 All rights
+        reserved | Deeshi Soft Technology Services </div>
+</footer>
 <script>
+    var f1 = document.querySelector(".f-1")
+    var f2 = document.querySelector(".f-2")
+    var f3 = document.querySelector(".f-3")
+    var f4 = document.querySelector(".f-4")
+    var f5 = document.querySelector(".f-5")
+    var j = document.querySelector(".j")
+
+    function fisrt1(){
+        f1.style.display = 'block'
+        f2.style.display = 'none'
+        f3.style.display = 'none'
+        f4.style.display = 'none'
+        f5.style.display = 'none'
+    }
+    function fisrt2(){
+        f1.style.display = 'none'
+        f2.style.display = 'block'
+        f3.style.display = 'none'
+        f4.style.display = 'none'
+        f5.style.display = 'none'
+    }
+    function fisrt3(){
+        f1.style.display = 'none'
+        f2.style.display = 'none'
+        f3.style.display = 'block'
+        f4.style.display = 'none'
+        f5.style.display = 'none'
+    }
+    function fisrt4(){
+        f1.style.display = 'none'
+        f2.style.display = 'none'
+        f3.style.display = 'none'
+        f4.style.display = 'block'
+        f5.style.display = 'none'
+    }
+    function fisrt5(){
+        f1.style.display = 'none'
+        f2.style.display = 'none'
+        f3.style.display = 'none'
+        f4.style.display = 'none'
+        f5.style.display = 'block'
+    }
 function aiSpeak(text) {
     if (!text) return;
     const utterance = new SpeechSynthesisUtterance(text);
