@@ -418,31 +418,35 @@ body {
 </div>
 
 <!-- Sidebar -->
-<div id="sidebar" class="sidebar">
-    <a href="/" class="sidebar-link">Home</a>
+<div id="sideNavbar" class="side-navbar">
 
-    <!-- About Us -->
-    <div class="sidebar-dropdown">
-        <button onclick="toggleSidebarDropdown('sidebarAbout')" class="sidebar-dropbtn">About Us <i class="fa fa-chevron-down"></i></button>
-        <div id="sidebarAbout" class="sidebar-dropdown-content">
-            <a href="/pages/Who-we-are.html">Why 117?</a>
+        <span class="close-btn" onclick="closeSidebar()">&times;</span>
+
+        <a href="#">Home</a>
+
+        <!-- ABOUT DROPDOWN -->
+        <button class="side-dropbtn" onclick="toggleSideDropdown('aboutSide')">
+            About Us <i class="fa-solid fa-chevron-down"></i>
+        </button>
+        <div id="aboutSide" class="side-dropdown">
+            <a href="/pages/Who-we-are.html">Why  117?</a>
             <a href="/pages/Vision.html">Vision & Mission</a>
+            <a href="#id">Our Team</a>
         </div>
-    </div>
 
-    <!-- Our Services -->
-    <div class="sidebar-dropdown">
-        <button onclick="toggleSidebarDropdown('sidebarServices')" class="sidebar-dropbtn">Our Services <i class="fa fa-chevron-down"></i></button>
-        <div id="sidebarServices" class="sidebar-dropdown-content">
+        <!-- SERVICES DROPDOWN -->
+        <button class="side-dropbtn" onclick="toggleSideDropdown('serviceSide')">
+            Our Services <i class="fa-solid fa-chevron-down"></i>
+        </button>
+        <div id="serviceSide" class="side-dropdown">
+            <a href="#topic">Our Security</a>
             <a href="/pages/Security.html">Other services</a>
         </div>
+
+        <a href="/pages/Galley.html">Gallery</a>
+        <a href="./pages/Our-Clients.html">Our Clients</a>
+        <a href="/pages/Contact.html">Contact Us</a>
     </div>
-
-    <a href="/pages/Galley.html" class="sidebar-link">Gallery</a>
-    <a href="/pages/Our-Clients.html" class="sidebar-link">Our Clients</a>
-    <a href="/pages/Contact.html" class="sidebar-link">Contact Us</a>
-</div>
-
 
 
 <div class="Iamge" style="margin-top: 140px; padding: 15px;">
@@ -466,12 +470,13 @@ body {
 </div>
 <footer style="background-color: rgba(0,0,0,0.9); padding: 40px 20px; color: #fff; margin-top: 50px;">
     <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 40px;">
-        <p style="color: darkgoldenrod">117 security force, No 11/25 Abirami Nagar, Thiruverkadu, Chennai 600077.   ph:8124361414.  mail: 117@gmail.com.  website:www.117securityforce.com</p>
+        <p style="color: darkgoldenrod">117 security force, No 11/25 Abirami Nagar, Thiruverkadu, Chennai 600077.   ph:8124361414.  mail: mugil.dm@117securityforce.com  website:www.117securityforce.com</p>
     </div>
     <!-- Footer Bottom -->
     <div style="margin-top: 30px; font-size: 12px; text-align: center; color: white;"> © 2025 All rights
-        reserved | Deeshi Soft Technology Services </div>
+        reserved | Ashdee Infotech </div>
 </footer>
+
 </body>
 </html>
 
@@ -565,11 +570,11 @@ window.addEventListener('click', function(e){
 });
 
     function openSidebar() {
-        document.getElementById("sidebar").style.left = "0%";
+        document.getElementById("sideNavbar").style.left = "0%";
     }
 
     function closeSidebar() {
-        document.getElementById("sidebar").style.left = "-60%";
+        document.getElementById("sideNavbar").style.left = "-60%";
     }
 
 
