@@ -28,7 +28,7 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    background: rgba(0,0,0,0.8);
+    background: white;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -58,8 +58,7 @@ body {
     border-radius: 12px;
     border: none;
     background: white;
-    color: darkgoldenrod;
-    cursor: pointer;
+    color: black;
 }
 
 .button-links button:hover,
@@ -308,42 +307,42 @@ footer .dropdown-menu-footer a {
 
 <!-- NAVBAR -->
 <div class="Navbar">
-    <div class="style">
-        <img src="../images/logo.jpeg" class="g">
-        <h1 class="u" style="color: darkgoldenrod">117 Security Force</h1>
-    </div>
-    <div class="button-links">
-        <form action="/">
-            <button>Home</button>
-        </form> <!-- ABOUT US DROPDOWN -->
-        <div class="dropdown-container">
-            <button class="dropbtn" onmouseover="toggleDropdown('aboutDropdown', this)"> About Us <i
-                    class="fa-solid fa-chevron-down"></i>
-            </button>
-            <div id="aboutDropdown" class="dropdown-menu">
-                <a href="/pages/Who-we-are.html">Why 117?</a>
-                <a href="/pages/Vision.html">Vision & Mission</a>
-            </div>
-        </div> <!-- OUR SERVICES DROPDOWN -->
-        <div class="dropdown-container"> <button class="dropbtn"
-                                                 onmouseover="toggleDropdown('servicesDropdown', this)"> Our Services <i
-                class="fa-solid fa-chevron-down"></i> </button>
-            <div id="servicesDropdown" class="dropdown-menu">
-                <a href="/pages/Security.html">Other services</a>
-            </div>
+        <div class="style">
+            <img src="../bg-re/logo.png" style="width: 150px;">
+            <h1 class="u" style="color: darkgoldenrod">117 Security Force</h1>
         </div>
-        <form action="/pages/Galley.html">
-            <button>Gallery</button>
-        </form>
-        <form action="/pages/Our-Clients.html">
-            <button>Our Clients</button>
-        </form>
-        <form action="/pages/Contact.html">
-            <button>Contact Us</button>
-        </form>
+        <div class="button-links">
+            <a href="/"><button>Home</button></a> <!-- ABOUT US DROPDOWN --> <!-- ABOUT US DROPDOWN -->
+            <div class="dropdown-container">
+                <button class="dropbtn" onmouseover="toggleDropdown('aboutDropdown', this)"> About Us <i
+                        class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div id="aboutDropdown" class="dropdown-menu">
+                    <a href="#id">Our Team</a>
+                    <a href="/pages/Who-we-are.html">Why 117?</a>
+                    <a href="/pages/Vision.html">Vision & Mission</a>
+                </div>
+            </div> <!-- OUR SERVICES DROPDOWN -->
+            <div class="dropdown-container"> <button class="dropbtn"
+                    onmouseover="toggleDropdown('servicesDropdown', this)"> Our Services <i
+                        class="fa-solid fa-chevron-down"></i> </button>
+                <div id="servicesDropdown" class="dropdown-menu">
+                    <a href="#topic" onclick="hightLate()">Our security</a>
+                    <a href="/pages/Security.html">other services</a>
+                </div>
+            </div>
+            <form action="/pages/Galley.html">
+                <button>Gallery</button>
+            </form>
+            <form action="/pages/Our-Clients.html">
+                <button>Our Clients</button>
+            </form>
+            <form action="/pages/Contact.html">
+                <button>Contact Us</button>
+            </form>
+        </div>
+        <p class="ui" onclick="openSidebar()"><i class="fa-solid fa-bars"></i></p>
     </div>
-    <p class="ui" onclick="openSidebar()"><i class="fa-solid fa-bars"></i></p>
-</div>
 
 <!-- SIDE NAVBAR -->
 <div id="sideNavbar" class="side-navbar">
@@ -365,7 +364,7 @@ footer .dropdown-menu-footer a {
 
 <!-- CONTENT -->
 <br>
-<h1>Other services</h1>
+<h1 style="color: darkgoldenrod">Other services</h1>
 <div class="main-content">
     <div class="btn-l">
         <button onclick="fisrt1()">Investigation</button>
@@ -444,18 +443,23 @@ footer .dropdown-menu-footer a {
         <br>
         <div>
             <div style="color: white; display: flex; align-items: center; gap: 10px;">
+                 <i class="fa-solid fa-location-dot"></i>:
+                <p>117 security force No 11/25, Udhavum Karangal back Side, 7th Street Abirami Nagar, Thiruverkadu, Chennai-600077, Tamil Nadu.</p>
+            </div>
+            <br>
+            <div style="color: white; display: flex; align-items: center; gap: 10px;">
                 <i class="fa-solid fa-globe"></i>:
                 <p>www.117securityforce</p>
             </div>
             <br>
             <div style="color: white; display: flex; align-items: center; gap: 10px;">
-                 <i class="fa-solid fa-location-dot"></i>:
-                <p>Thiruverkadu Chennai 600077.</p>
-            </div>
-            <br>
-            <div style="color: white; display: flex; align-items: center; gap: 10px;">
                 <i class="fa-solid fa-phone-volume"></i>:
                 <p> 8124361414</p>
+            </div>
+            <br/>
+            <div style="color: white; display: flex; align-items: center; gap: 10px;">
+                <i class="fa-solid fa-envelope"></i>:
+                <p>mugil.dm@117securityforce.com</p>
             </div>
         </div>
     </div>
